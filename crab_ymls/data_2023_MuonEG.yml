@@ -1,0 +1,31 @@
+campaign:
+  name: data_2023_MuonEG
+  crab_template: template_crab.py
+
+  # User specific
+  workArea: data_2023_MuonEG
+  storageSite: T2_XXX
+  outLFNDirBase: /store/user/XXX/PFNano_Run3/data_2023
+  voGroup: null # or leave empty
+
+  # Campaign specific
+  tag_extension: BTV_Run3_2023_Comm_MINIAODv4 # Will get appended after the current tag
+  tag_mod: # Will modify name in-place for MC eg. "PFNanoAODv1" will replace MiniAODv2 -> PFNanoAODv1
+  # If others shall be able to access dataset via DAS (important when collaborating for commissioning!)
+  publication: True
+  config: data_2023_NANO.py
+  # Specify if running on data
+  data: True
+  lumiMask: jsons/Cert_Collisions2023_366442_370790_Golden.json 
+  # datasets will take either a list of DAS names or a text file containing them
+  # do NOT submit too many tasks at the same time, despite it looking more convenient to you
+  # wait for tasks to finish before submitting entire campaigns,
+  # it's better to request one dataset at a time (taking fairshare into account)
+  datasets: |
+    /MuonEG/Run2023B-22Sep2023-v1/MINIAOD
+    /MuonEG/Run2023C-22Sep2023_v1-v1/MINIAOD
+    /MuonEG/Run2023C-22Sep2023_v2-v1/MINIAOD
+    /MuonEG/Run2023C-22Sep2023_v3-v1/MINIAOD
+    /MuonEG/Run2023C-22Sep2023_v4-v1/MINIAOD
+    /MuonEG/Run2023D-22Sep2023_v1-v1/MINIAOD
+    /MuonEG/Run2023D-22Sep2023_v2-v1/MINIAOD
