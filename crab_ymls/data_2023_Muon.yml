@@ -4,7 +4,7 @@ campaign:
 
   # User specific
   workArea: data_2023_Muon
-  storageSite: T2_XXX
+  storageSite: T3_US_FNALLPC
   outLFNDirBase: /store/user/XXX/PFNano_Run3/data_2023
   voGroup: null # or leave empty
 

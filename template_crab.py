@@ -19,7 +19,7 @@ config.Data.outputDatasetTag = '_outputDatasetTag_'
 config.Data.outLFNDirBase = '_outLFNDirBase_'
 config.Data.splitting = '_splitting_'
 config.Data.ignoreLocality = False
-config.Data.publication = _publication_
+config.Data.publication = '_publication_'
 config.Data.allowNonValidInputDataset = True
 config.Data.publishDBS = 'phys03'
 

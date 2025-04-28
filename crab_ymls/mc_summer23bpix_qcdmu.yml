@@ -4,8 +4,8 @@ campaign:
 
   # User specific
   workArea: mc_summer23bpix_qcdmu
-  storageSite: T2_XXX
-  outLFNDirBase: /store/user/XXX/PFNano_Run3/mc_summer23bpix
+  storageSite: T3_US_FNALLPC
+  outLFNDirBase: /store/user/abhijith/PFNano_Run3/bpix
   voGroup: null # or leave empty
 
   # Campaign specific

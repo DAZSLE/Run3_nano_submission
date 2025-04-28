@@ -4,12 +4,12 @@ campaign:
 
   # User specific
   workArea: data_2022_MINIAODv4_Muon
-  storageSite: T2_XXX
+  storageSite: T3_US_FNALLPC
   outLFNDirBase: /store/user/XXX/PFNano_Run3/data_2022_MINIAODv4
   voGroup: null # or leave empty
 
   # Campaign specific
-  tag_extension: BTV_Run3_2022_Comm_MINIAODv4 # Will get appended after the current tag
+  tag_extension: BTV_Run3_test # Will get appended after the current tag
   tag_mod: # Will modify name in-place for MC eg. "PFNanoAODv1" will replace MiniAODv2 -> PFNanoAODv1
   # If others shall be able to access dataset via DAS (important when collaborating for commissioning!)
   publication: True
