@@ -1,0 +1,13 @@
+[tool.ruff]
+line-length = 100
+exclude = [
+    ".git",
+    ".ruff_cache",
+    "__pycache__",
+    "build",
+    "dist",
+    "*_NANO.py",    # Ignore all aut-generated NANO.py files
+]
+
+[tool.black]
+line-length = 100

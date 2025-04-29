@@ -16,7 +16,7 @@ campaign:
   config: MC_2022_NANO.py
   # Specify if running on data
   data: False
-  lumiMask:  
+  lumiMask:
   # datasets will take either a list of DAS names or a text file containing them
   # do NOT submit too many tasks at the same time, despite it looking more convenient to you
   # wait for tasks to finish before submitting entire campaigns,
