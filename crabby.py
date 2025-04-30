@@ -262,7 +262,7 @@ def main(args):
         "crab_template": "template_crab.py",
         "workArea": f"crab/{dlabel}_{args.year}_{args.dataset}",
         "storageSite": "T3_US_FNALLPC",
-        "outLFNDirBase": f"/store/user/lpcpfnano/{args.user}/PFNano_Run3/{dlabel}_{args.year}",
+        "outLFNDirBase": f"/store/user/lpcpfnano/PFNano_Run3/25v1/{args.user}/{dlabel}_{args.year}",
         "voGroup": None,
         "publication": True,
         "config": f"configs/{CONFIGS[dlabel][args.year]}",
