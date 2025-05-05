@@ -1,9 +1,23 @@
+import json
 from pprint import pprint
 from dbs.apis.dbsClient import DbsApi
+import argparse
 
 dbs = DbsApi("https://cmsweb.cern.ch/dbs/prod/global/DBSReader")
 
-DATASETS = ["JetMET", "Muon", "EGamma", "Tau", "BTagMu", "MuonEG", "ParkingVBF", "ParkingSingleMuon"]
+DATASETS = {
+    # Name: selectors
+    "JetMET": ["JetHT", "JetMET"],
+    "Muon": ["SingleMuon", "Muon"],
+    "EGamma": ["EGamma"],
+    "Tau": ["Tau"],
+    "BTagMu": ["BTagMu"],
+    "MuonEG": ["MuonEG"],
+    "ParkingVBF": ["ParkingVBF"],
+    "ParkingSingleMuon": ["ParkingSingleMuon"],
+}
+
+YEARS = ["2022", "2022EE", "2023", "2023BPix", "2024"]
 
 data_tags = {
     # 2022 summary slide: https://docs.google.com/presentation/d/1F4ndU7DBcyvrEEyLfYqb29NGkBPs20EAnBxe_l7AEII/edit
@@ -32,62 +46,101 @@ data_tags = {
         "G": "Run2024G-PromptReco",
         "H": "Run2024H-PromptReco",
         "I": "Run2024I-PromptReco",
-    }
+    },
 }
 
 
-def get_data(datasets: list[str] = DATASETS, year: str = "2024"):
+def get_data(datasets: list[str] = list(DATASETS.keys()), year: str = "2024"):
     """Get MINIAOD datasets for 2024 using the DAS API"""
     ddict = {}
 
-    for dataset in datasets:
+    datasets = {k: DATASETS[k] for k in datasets}
+
+    for dataset, selectors in datasets.items():
         print(f"Getting {dataset}")
         tdict = {}
         for tag in data_tags[year]:
             print(f"\t{tag}")
-            das_datasets = dbs.listDatasets(dataset=f"/{dataset}*/{data_tags[year][tag]}*/MINIAOD")
-            for entry in das_datasets:
-                d = entry["dataset"]
-                # splitting index if dataset is split, e.g. JetMET0
-                d_split = d.split(dataset)[1].split("/")[0]  
+            for selector in selectors:
+                if (selector in ["JetHT", "SingleMuon"]) and (year != "2022"):
+                    # These are old names only used in 2022
+                    continue
 
-                if d_split.isdigit():
-                    # check if the dataset is split
-                    if d.split("/")[1] != dataset + d_split:
-                        # Name matching
-                        print(f"\t\tSkipping {d}")
-                        continue
+                das_datasets = dbs.listDatasets(dataset=f"/{selector}*/{data_tags[year][tag]}*/MINIAOD")
+                for entry in das_datasets:
+                    d = entry["dataset"]
+                    # splitting index if dataset is split, e.g. JetMET0
+                    d_split = d.split(selector)[1].split("/")[0]
 
-                    idx = f"{dataset}_Run{year}{tag}_{d_split}"
-                else:
-                    if d.split("/")[1] != dataset:
-                        # Name matching
-                        print(f"\t\tSkipping {d}")
-                        continue
+                    if d_split.isdigit():
+                        # check if the dataset is split
+                        # if not any((d.split("/")[1] == selector + d_split) for selector in selectors):
+                        if d.split("/")[1] != selector + d_split:
+                            # Name matching
+                            print(f"\t\tSkipping {d}")
+                            continue
 
-                    idx = f"{dataset}_Run{year}{tag}"
-                
-                if idx not in tdict:
-                    tdict[idx] = [d]
-                else:
-                    tdict[idx].append(d)
+                        idx = f"{selector}_Run{year[:4]}{tag}_{d_split}"
+                    else:
+                        if d.split("/")[1] != selector:
+                            # Name matching
+                            print(f"\t\tSkipping {d}")
+                            continue
 
-        print("\tChecking for multiple entires")
+                        idx = f"{selector}_Run{year[:4]}{tag}"
+
+                    if idx not in tdict:
+                        tdict[idx] = [d]
+                    else:
+                        tdict[idx].append(d)
+
+        print("\tChecking for multiple entries")
         for idx, dlist in list(tdict.items()):
             if len(dlist) == 1:
                 tdict[idx] = dlist[0]
             else:
                 # Some datasets appear to split even further into computing versions
                 # Based on this PDMV table https://pdmv-pages.web.cern.ch/run_3_data/full_table.html, we need to use them all
-                print(f"\t\t{idx} has multiple entries, will assume they are different computing versions and keep all")
+                print(
+                    f"\t\t{idx} has multiple entries, will assume they are different computing versions and keep all"
+                )
 
                 for i in range(len(dlist)):
                     tdict[f"{idx}v{i+1}"] = dlist[i]
 
                 tdict.pop(idx)
-                
+
         ddict[dataset] = tdict
 
     return ddict
 
     # pprint(ddict)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Get MINIAOD datasets from DAS")
+    parser.add_argument(
+        "--years",
+        type=str,
+        nargs="+",
+        default=YEARS,
+        choices=YEARS,
+        help="Year to get datasets for (default: all years)",
+    )
+    parser.add_argument(
+        "--datasets",
+        type=str,
+        nargs="+",
+        default=list(DATASETS.keys()),
+        choices=list(DATASETS.keys()),
+        help=f"List of datasets to query (default: {list(DATASETS.keys())})",
+    )
+
+    args = parser.parse_args()
+
+    for year in args.years:
+        ddict = get_data(datasets=args.datasets, year=year)
+
+        # save to json
+        with open(f"DATA_{year}.json", "w") as f:
+            json.dump(ddict, f, indent=4)

@@ -576,176 +576,176 @@ all_samples = {
             "ZZ": "/ZZ_TuneCP5_13p6TeV_pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v2/MINIAODSIM",
         },
     },
-    "JetMET": {
-        "2022": {
-            "JetHT_Run2022C": "/JetHT/Run2022C-22Sep2023-v1/MINIAOD",
-            "JetMET_Run2022C": "/JetMET/Run2022C-22Sep2023-v1/MINIAOD",
-            "JetMET_Run2022D": "/JetMET/Run2022D-22Sep2023-v1/MINIAOD",
-        },
-        "2022EE": {
-            "JetMET_Run2022E": "/JetMET/Run2022E-22Sep2023-v1/MINIAOD",
-            "JetMET_Run2022F": "/JetMET/Run2022F-22Sep2023-v2/MINIAOD",
-            "JetMET_Run2022G": "/JetMET/Run2022G-22Sep2023-v2/MINIAOD",
-        },
-        # Some datasets split in half if they are too large (0 - even events, 1 - odd events)
-        # https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVRun3Analysis#Remark_on_the_Dataset_Definition
-        # https://cms-talk.web.cern.ch/t/difference-between-jetmet0-and-jetmet1/65964/9
-        "2023": {
-            "JetMET_Run2023C_0v1": "/JetMET0/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "JetMET_Run2023C_0v2": "/JetMET0/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "JetMET_Run2023C_0v3": "/JetMET0/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "JetMET_Run2023C_0v4": "/JetMET0/Run2023C-22Sep2023_v4-v1/MINIAOD",
-            "JetMET_Run2023C_1v1": "/JetMET1/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "JetMET_Run2023C_1v2": "/JetMET1/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "JetMET_Run2023C_1v3": "/JetMET1/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "JetMET_Run2023C_1v4": "/JetMET1/Run2023C-22Sep2023_v4-v1/MINIAOD",
-        },
-        "2023BPix": {
-            "JetMET_Run2023D_0v1": "/JetMET0/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "JetMET_Run2023D_0v2": "/JetMET0/Run2023D-22Sep2023_v2-v1/MINIAOD",
-            "JetMET_Run2023D_1v1": "/JetMET1/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "JetMET_Run2023D_1v2": "/JetMET1/Run2023D-22Sep2023_v2-v1/MINIAOD",
-        },
-        # "2024": {
-        #     "JetMET_Run2024C_0": "/JetMET0/Run2024C-2024CDEReprocessing-v1/MINIAOD",
-        #     "JetMET_Run2024C_1": "/JetMET1/Run2024C-2024CDEReprocessing-v2/MINIAOD",
-        #     "JetMET_Run2024D_0": "/JetMET0/Run2024D-2024CDEReprocessing-v1/MINIAOD",
-        #     "JetMET_Run2024D_1": "/JetMET1/Run2024D-2024CDEReprocessing-v1/MINIAOD",
-        #     "JetMET_Run2024E_0": "/JetMET0/Run2024E-2024CDEReprocessing-v1/MINIAOD",
-        #     "JetMET_Run2024E_1": "/JetMET1/Run2024E-2024CDEReprocessing-v1/MINIAOD",
-        #     "JetMET_Run2024F_0": "/JetMET0/Run2024F-PromptReco-v1/MINIAOD",
-        #     "JetMET_Run2024F_1": "/JetMET1/Run2024F-PromptReco-v1/MINIAOD",
-        #     "JetMET_Run2024G_0": "/JetMET0/Run2024G-PromptReco-v1/MINIAOD",
-        #     "JetMET_Run2024G_1": "/JetMET1/Run2024G-PromptReco-v1/MINIAOD",
-        #     "JetMET_Run2024H_0": "/JetMET0/Run2024H-PromptReco-v1/MINIAOD",
-        #     "JetMET_Run2024H_1": "/JetMET1/Run2024H-PromptReco-v1/MINIAOD",
-        #     "JetMET_Run2024I_0": "/JetMET0/Run2024I-PromptReco-v1/MINIAOD",
-        #     "JetMET_Run2024I_1": "/JetMET1/Run2024I-PromptReco-v1/MINIAOD",
-        # },
-    },
-    "Muon": {
-        "2022": {
-            "SingleMuon_Run2022C": "/SingleMuon/Run2022C-22Sep2023-v1/MINIAOD",
-            "Muon_Run2022C": "/Muon/Run2022C-22Sep2023-v1/MINIAOD",
-            "Muon_Run2022D": "/Muon/Run2022D-22Sep2023-v1/MINIAOD",
-        },
-        "2022EE": {
-            "Muon_Run2022E": "/Muon/Run2022E-22Sep2023-v1/MINIAOD",
-            "Muon_Run2022F": "/Muon/Run2022F-22Sep2023-v1/MINIAOD",
-            "Muon_Run2022G": "/Muon/Run2022G-22Sep2023-v1/MINIAOD",
-        },
-        "2023": {
-            "Muon_Run2023B": "/Muon0/Run2023B-22Sep2023-v1/MINIAOD",
-            "Muon_Run2023C_0v1": "/Muon0/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "Muon_Run2023C_0v2": "/Muon0/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "Muon_Run2023C_0v3": "/Muon0/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "Muon_Run2023C_0v4": "/Muon0/Run2023C-22Sep2023_v4-v1/MINIAOD",
-            "Muon_Run2023C_1v1": "/Muon1/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "Muon_Run2023C_1v2": "/Muon1/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "Muon_Run2023C_1v3": "/Muon1/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "Muon_Run2023C_1v4": "/Muon1/Run2023C-22Sep2023_v4-v1/MINIAOD",
-        },
-        "2023BPix": {
-            "Muon_Run2023D_0v1": "/Muon0/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "Muon_Run2023D_0v2": "/Muon0/Run2023D-22Sep2023_v2-v1/MINIAOD",
-            "Muon_Run2023D_1v1": "/Muon1/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "Muon_Run2023D_1v2": "/Muon1/Run2023D-22Sep2023_v2-v1/MINIAOD",
-        },
-    },
-    "EGamma": {
-        "2022": {
-            "EGamma_Run2022C": "/EGamma/Run2022C-22Sep2023-v1/MINIAOD",
-            "EGamma_Run2022D": "/EGamma/Run2022D-22Sep2023-v1/MINIAOD",
-        },
-        "2022EE": {
-            "EGamma_Run2022E": "/EGamma/Run2022E-22Sep2023-v1/MINIAOD",
-            "EGamma_Run2022F": "/EGamma/Run2022F-22Sep2023-v1/MINIAOD",
-            "EGamma_Run2022G": "/EGamma/Run2022G-22Sep2023-v1/MINIAOD",
-        },
-        "2023": {
-            "EGamma_Run2023B": "/EGamma/Run2023B-22Sep2023-v1/MINIAOD",
-            "EGamma_Run2023C_0v1": "/EGamma0/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "EGamma_Run2023C_0v2": "/EGamma0/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "EGamma_Run2023C_0v3": "/EGamma0/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "EGamma_Run2023C_0v4": "/EGamma0/Run2023C-22Sep2023_v4-v1/MINIAOD",
-            "EGamma_Run2023C_1v1": "/EGamma1/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "EGamma_Run2023C_1v2": "/EGamma1/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "EGamma_Run2023C_1v3": "/EGamma1/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "EGamma_Run2023C_1v4": "/EGamma1/Run2023C-22Sep2023_v4-v1/MINIAOD",
-        },
-        "2023BPix": {
-            "EGamma_Run2023D_0v1": "/EGamma0/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "EGamma_Run2023D_0v2": "/EGamma0/Run2023D-22Sep2023_v2-v1/MINIAOD",
-            "EGamma_Run2023D_1v1": "/EGamma1/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "EGamma_Run2023D_1v2": "/EGamma1/Run2023D-22Sep2023_v2-v1/MINIAOD",
-        },
-    },
-    "Tau": {
-        "2022": {
-            "Tau_Run2022C": "/Tau/Run2022C-22Sep2023-v1/MINIAOD",
-            "Tau_Run2022D": "/Tau/Run2022D-22Sep2023-v1/MINIAOD",
-        },
-        "2022EE": {
-            "Tau_Run2022E": "/Tau/Run2022E-22Sep2023-v1/MINIAOD",
-            "Tau_Run2022F": "/Tau/Run2022F-22Sep2023-v1/MINIAOD",
-            "Tau_Run2022G": "/Tau/Run2022G-22Sep2023-v1/MINIAOD",
-        },
-        "2023": {
-            "Tau_Run2023B": "/Tau/Run2023B-22Sep2023-v1/MINIAOD",
-            "Tau_Run2023C_v1": "/Tau/Run2023C-22Sep2023_v1-v2/MINIAOD",
-            "Tau_Run2023C_v2": "/Tau/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "Tau_Run2023C_v3": "/Tau/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "Tau_Run2023C_v4": "/Tau/Run2023C-22Sep2023_v4-v1/MINIAOD",
-        },
-        "2023BPix": {
-            "Tau_Run2023D_v1": "/Tau/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "Tau_Run2023D_v2": "/Tau/Run2023D-22Sep2023_v2-v1/MINIAOD",
-        },
-    },
-    "BTagMu": {
-        "2022": {
-            "BTagMu_Run2022C": "/BTagMu/Run2022C-22Sep2023-v1/MINIAOD",
-            "BTagMu_Run2022D": "/BTagMu/Run2022D-22Sep2023-v1/MINIAOD",
-        },
-        "2022EE": {
-            "BTagMu_Run2022E": "/BTagMu/Run2022E-22Sep2023-v1/MINIAOD",
-            "BTagMu_Run2022F": "/BTagMu/Run2022F-22Sep2023-v1/MINIAOD",
-            "BTagMu_Run2022G": "/BTagMu/Run2022G-22Sep2023-v1/MINIAOD",
-        },
-        "2023": {
-            "BTagMu_Run2023B": "/BTagMu/Run2023B-22Sep2023-v1/MINIAOD",
-            "BTagMu_Run2023C_v1": "/BTagMu/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "BTagMu_Run2023C_v2": "/BTagMu/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "BTagMu_Run2023C_v3": "/BTagMu/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "BTagMu_Run2023C_v4": "/BTagMu/Run2023C-22Sep2023_v4-v1/MINIAOD",
-        },
-        "2023BPix": {
-            "BTagMu_Run2023D_v1": "/BTagMu/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "BTagMu_Run2023D_v2": "/BTagMu/Run2023D-22Sep2023_v2-v1/MINIAOD",
-        },
-    },
-    "MuonEG": {
-        "2022": {
-            "MuonEG_Run2022C": "/MuonEG/Run2022C-22Sep2023-v1/MINIAOD",
-            "MuonEG_Run2022D": "/MuonEG/Run2022D-22Sep2023-v1/MINIAOD",
-        },
-        "2022EE": {
-            "MuonEG_Run2022E": "/MuonEG/Run2022E-22Sep2023-v1/MINIAOD",
-            "MuonEG_Run2022F": "/MuonEG/Run2022F-22Sep2023-v1/MINIAOD",
-            "MuonEG_Run2022G": "/MuonEG/Run2022G-22Sep2023-v1/MINIAOD",
-        },
-        "2023": {
-            "MuonEG_Run2023B": "/MuonEG/Run2023B-22Sep2023-v1/MINIAOD",
-            "MuonEG_Run2023C_v1": "/MuonEG/Run2023C-22Sep2023_v1-v1/MINIAOD",
-            "MuonEG_Run2023C_v2": "/MuonEG/Run2023C-22Sep2023_v2-v1/MINIAOD",
-            "MuonEG_Run2023C_v3": "/MuonEG/Run2023C-22Sep2023_v3-v1/MINIAOD",
-            "MuonEG_Run2023C_v4": "/MuonEG/Run2023C-22Sep2023_v4-v1/MINIAOD",
-        },
-        "2023BPix": {
-            "MuonEG_Run2023D_v1": "/MuonEG/Run2023D-22Sep2023_v1-v1/MINIAOD",
-            "MuonEG_Run2023D_v2": "/MuonEG/Run2023D-22Sep2023_v2-v1/MINIAOD",
-        },
-    },
+    # "JetMET": {
+    #     "2022": {
+    #         "JetHT_Run2022C": "/JetHT/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "JetMET_Run2022C": "/JetMET/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "JetMET_Run2022D": "/JetMET/Run2022D-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2022EE": {
+    #         "JetMET_Run2022E": "/JetMET/Run2022E-22Sep2023-v1/MINIAOD",
+    #         "JetMET_Run2022F": "/JetMET/Run2022F-22Sep2023-v2/MINIAOD",
+    #         "JetMET_Run2022G": "/JetMET/Run2022G-22Sep2023-v2/MINIAOD",
+    #     },
+    #     # Some datasets split in half if they are too large (0 - even events, 1 - odd events)
+    #     # https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVRun3Analysis#Remark_on_the_Dataset_Definition
+    #     # https://cms-talk.web.cern.ch/t/difference-between-jetmet0-and-jetmet1/65964/9
+    #     "2023": {
+    #         "JetMET_Run2023C_0v1": "/JetMET0/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "JetMET_Run2023C_0v2": "/JetMET0/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "JetMET_Run2023C_0v3": "/JetMET0/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "JetMET_Run2023C_0v4": "/JetMET0/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #         "JetMET_Run2023C_1v1": "/JetMET1/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "JetMET_Run2023C_1v2": "/JetMET1/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "JetMET_Run2023C_1v3": "/JetMET1/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "JetMET_Run2023C_1v4": "/JetMET1/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #     },
+    #     "2023BPix": {
+    #         "JetMET_Run2023D_0v1": "/JetMET0/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "JetMET_Run2023D_0v2": "/JetMET0/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #         "JetMET_Run2023D_1v1": "/JetMET1/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "JetMET_Run2023D_1v2": "/JetMET1/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #     },
+    #     # "2024": {
+    #     #     "JetMET_Run2024C_0": "/JetMET0/Run2024C-2024CDEReprocessing-v1/MINIAOD",
+    #     #     "JetMET_Run2024C_1": "/JetMET1/Run2024C-2024CDEReprocessing-v2/MINIAOD",
+    #     #     "JetMET_Run2024D_0": "/JetMET0/Run2024D-2024CDEReprocessing-v1/MINIAOD",
+    #     #     "JetMET_Run2024D_1": "/JetMET1/Run2024D-2024CDEReprocessing-v1/MINIAOD",
+    #     #     "JetMET_Run2024E_0": "/JetMET0/Run2024E-2024CDEReprocessing-v1/MINIAOD",
+    #     #     "JetMET_Run2024E_1": "/JetMET1/Run2024E-2024CDEReprocessing-v1/MINIAOD",
+    #     #     "JetMET_Run2024F_0": "/JetMET0/Run2024F-PromptReco-v1/MINIAOD",
+    #     #     "JetMET_Run2024F_1": "/JetMET1/Run2024F-PromptReco-v1/MINIAOD",
+    #     #     "JetMET_Run2024G_0": "/JetMET0/Run2024G-PromptReco-v1/MINIAOD",
+    #     #     "JetMET_Run2024G_1": "/JetMET1/Run2024G-PromptReco-v1/MINIAOD",
+    #     #     "JetMET_Run2024H_0": "/JetMET0/Run2024H-PromptReco-v1/MINIAOD",
+    #     #     "JetMET_Run2024H_1": "/JetMET1/Run2024H-PromptReco-v1/MINIAOD",
+    #     #     "JetMET_Run2024I_0": "/JetMET0/Run2024I-PromptReco-v1/MINIAOD",
+    #     #     "JetMET_Run2024I_1": "/JetMET1/Run2024I-PromptReco-v1/MINIAOD",
+    #     # },
+    # },
+    # "Muon": {
+    #     "2022": {
+    #         "SingleMuon_Run2022C": "/SingleMuon/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "Muon_Run2022C": "/Muon/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "Muon_Run2022D": "/Muon/Run2022D-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2022EE": {
+    #         "Muon_Run2022E": "/Muon/Run2022E-22Sep2023-v1/MINIAOD",
+    #         "Muon_Run2022F": "/Muon/Run2022F-22Sep2023-v1/MINIAOD",
+    #         "Muon_Run2022G": "/Muon/Run2022G-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2023": {
+    #         "Muon_Run2023B": "/Muon0/Run2023B-22Sep2023-v1/MINIAOD",
+    #         "Muon_Run2023C_0v1": "/Muon0/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "Muon_Run2023C_0v2": "/Muon0/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "Muon_Run2023C_0v3": "/Muon0/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "Muon_Run2023C_0v4": "/Muon0/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #         "Muon_Run2023C_1v1": "/Muon1/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "Muon_Run2023C_1v2": "/Muon1/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "Muon_Run2023C_1v3": "/Muon1/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "Muon_Run2023C_1v4": "/Muon1/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #     },
+    #     "2023BPix": {
+    #         "Muon_Run2023D_0v1": "/Muon0/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "Muon_Run2023D_0v2": "/Muon0/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #         "Muon_Run2023D_1v1": "/Muon1/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "Muon_Run2023D_1v2": "/Muon1/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #     },
+    # },
+    # "EGamma": {
+    #     "2022": {
+    #         "EGamma_Run2022C": "/EGamma/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "EGamma_Run2022D": "/EGamma/Run2022D-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2022EE": {
+    #         "EGamma_Run2022E": "/EGamma/Run2022E-22Sep2023-v1/MINIAOD",
+    #         "EGamma_Run2022F": "/EGamma/Run2022F-22Sep2023-v1/MINIAOD",
+    #         "EGamma_Run2022G": "/EGamma/Run2022G-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2023": {
+    #         "EGamma_Run2023B": "/EGamma/Run2023B-22Sep2023-v1/MINIAOD",
+    #         "EGamma_Run2023C_0v1": "/EGamma0/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "EGamma_Run2023C_0v2": "/EGamma0/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "EGamma_Run2023C_0v3": "/EGamma0/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "EGamma_Run2023C_0v4": "/EGamma0/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #         "EGamma_Run2023C_1v1": "/EGamma1/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "EGamma_Run2023C_1v2": "/EGamma1/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "EGamma_Run2023C_1v3": "/EGamma1/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "EGamma_Run2023C_1v4": "/EGamma1/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #     },
+    #     "2023BPix": {
+    #         "EGamma_Run2023D_0v1": "/EGamma0/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "EGamma_Run2023D_0v2": "/EGamma0/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #         "EGamma_Run2023D_1v1": "/EGamma1/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "EGamma_Run2023D_1v2": "/EGamma1/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #     },
+    # },
+    # "Tau": {
+    #     "2022": {
+    #         "Tau_Run2022C": "/Tau/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "Tau_Run2022D": "/Tau/Run2022D-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2022EE": {
+    #         "Tau_Run2022E": "/Tau/Run2022E-22Sep2023-v1/MINIAOD",
+    #         "Tau_Run2022F": "/Tau/Run2022F-22Sep2023-v1/MINIAOD",
+    #         "Tau_Run2022G": "/Tau/Run2022G-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2023": {
+    #         "Tau_Run2023B": "/Tau/Run2023B-22Sep2023-v1/MINIAOD",
+    #         "Tau_Run2023C_v1": "/Tau/Run2023C-22Sep2023_v1-v2/MINIAOD",
+    #         "Tau_Run2023C_v2": "/Tau/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "Tau_Run2023C_v3": "/Tau/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "Tau_Run2023C_v4": "/Tau/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #     },
+    #     "2023BPix": {
+    #         "Tau_Run2023D_v1": "/Tau/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "Tau_Run2023D_v2": "/Tau/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #     },
+    # },
+    # "BTagMu": {
+    #     "2022": {
+    #         "BTagMu_Run2022C": "/BTagMu/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "BTagMu_Run2022D": "/BTagMu/Run2022D-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2022EE": {
+    #         "BTagMu_Run2022E": "/BTagMu/Run2022E-22Sep2023-v1/MINIAOD",
+    #         "BTagMu_Run2022F": "/BTagMu/Run2022F-22Sep2023-v1/MINIAOD",
+    #         "BTagMu_Run2022G": "/BTagMu/Run2022G-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2023": {
+    #         "BTagMu_Run2023B": "/BTagMu/Run2023B-22Sep2023-v1/MINIAOD",
+    #         "BTagMu_Run2023C_v1": "/BTagMu/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "BTagMu_Run2023C_v2": "/BTagMu/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "BTagMu_Run2023C_v3": "/BTagMu/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "BTagMu_Run2023C_v4": "/BTagMu/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #     },
+    #     "2023BPix": {
+    #         "BTagMu_Run2023D_v1": "/BTagMu/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "BTagMu_Run2023D_v2": "/BTagMu/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #     },
+    # },
+    # "MuonEG": {
+    #     "2022": {
+    #         "MuonEG_Run2022C": "/MuonEG/Run2022C-22Sep2023-v1/MINIAOD",
+    #         "MuonEG_Run2022D": "/MuonEG/Run2022D-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2022EE": {
+    #         "MuonEG_Run2022E": "/MuonEG/Run2022E-22Sep2023-v1/MINIAOD",
+    #         "MuonEG_Run2022F": "/MuonEG/Run2022F-22Sep2023-v1/MINIAOD",
+    #         "MuonEG_Run2022G": "/MuonEG/Run2022G-22Sep2023-v1/MINIAOD",
+    #     },
+    #     "2023": {
+    #         "MuonEG_Run2023B": "/MuonEG/Run2023B-22Sep2023-v1/MINIAOD",
+    #         "MuonEG_Run2023C_v1": "/MuonEG/Run2023C-22Sep2023_v1-v1/MINIAOD",
+    #         "MuonEG_Run2023C_v2": "/MuonEG/Run2023C-22Sep2023_v2-v1/MINIAOD",
+    #         "MuonEG_Run2023C_v3": "/MuonEG/Run2023C-22Sep2023_v3-v1/MINIAOD",
+    #         "MuonEG_Run2023C_v4": "/MuonEG/Run2023C-22Sep2023_v4-v1/MINIAOD",
+    #     },
+    #     "2023BPix": {
+    #         "MuonEG_Run2023D_v1": "/MuonEG/Run2023D-22Sep2023_v1-v1/MINIAOD",
+    #         "MuonEG_Run2023D_v2": "/MuonEG/Run2023D-22Sep2023_v2-v1/MINIAOD",
+    #     },
+    # },
 }
 
 
