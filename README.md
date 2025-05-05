@@ -5,6 +5,7 @@
 ## Installation
 
 ```bash
+source /cvmfs/cms.cern.ch/cmsset_default.sh
 cmsrel CMSSW_14_0_6_patch1
 cd  CMSSW_14_0_6_patch1/src
 cmsenv
@@ -30,6 +31,12 @@ cmsRun.py configs/[CONFIG]
 ```
 
 ## Submission
+
+First, run this to set up crab>
+
+```bash
+source /cvmfs/cms.cern.ch/common/crab-setup.sh
+```
 
 For testing:
 

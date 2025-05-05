@@ -1,5 +1,7 @@
 import json
 
+
+# 2024 will be added below using the DAS API
 all_samples = {
     "HH4b": {
         "2022": {
@@ -604,22 +606,22 @@ all_samples = {
             "JetMET_Run2023D_1v1": "/JetMET1/Run2023D-22Sep2023_v1-v1/MINIAOD",
             "JetMET_Run2023D_1v2": "/JetMET1/Run2023D-22Sep2023_v2-v1/MINIAOD",
         },
-        "2024": {
-            "JetMET0_Run2024C": "/JetMET0/Run2024C-2024CDEReprocessing-v1/MINIAOD",
-            "JetMET1_Run2024C": "/JetMET1/Run2024C-2024CDEReprocessing-v2/MINIAOD",
-            "JetMET0_Run2024D": "/JetMET0/Run2024D-2024CDEReprocessing-v1/MINIAOD",
-            "JetMET1_Run2024D": "/JetMET1/Run2024D-2024CDEReprocessing-v1/MINIAOD",
-            "JetMET0_Run2024E": "/JetMET0/Run2024E-2024CDEReprocessing-v1/MINIAOD",
-            "JetMET1_Run2024E": "/JetMET1/Run2024E-2024CDEReprocessing-v1/MINIAOD",
-            "JetMET0_Run2024F": "/JetMET0/Run2024F-PromptReco-v1/MINIAOD",
-            "JetMET1_Run2024F": "/JetMET1/Run2024F-PromptReco-v1/MINIAOD",
-            "JetMET0_Run2024G": "/JetMET0/Run2024G-PromptReco-v1/MINIAOD",
-            "JetMET1_Run2024G": "/JetMET1/Run2024G-PromptReco-v1/MINIAOD",
-            "JetMET0_Run2024H": "/JetMET0/Run2024H-PromptReco-v1/MINIAOD",
-            "JetMET1_Run2024H": "/JetMET1/Run2024H-PromptReco-v1/MINIAOD",
-            "JetMET0_Run2024I": "/JetMET0/Run2024I-PromptReco-v1/MINIAOD",
-            "JetMET1_Run2024I": "/JetMET1/Run2024I-PromptReco-v1/MINIAOD",
-        },
+        # "2024": {
+        #     "JetMET_Run2024C_0": "/JetMET0/Run2024C-2024CDEReprocessing-v1/MINIAOD",
+        #     "JetMET_Run2024C_1": "/JetMET1/Run2024C-2024CDEReprocessing-v2/MINIAOD",
+        #     "JetMET_Run2024D_0": "/JetMET0/Run2024D-2024CDEReprocessing-v1/MINIAOD",
+        #     "JetMET_Run2024D_1": "/JetMET1/Run2024D-2024CDEReprocessing-v1/MINIAOD",
+        #     "JetMET_Run2024E_0": "/JetMET0/Run2024E-2024CDEReprocessing-v1/MINIAOD",
+        #     "JetMET_Run2024E_1": "/JetMET1/Run2024E-2024CDEReprocessing-v1/MINIAOD",
+        #     "JetMET_Run2024F_0": "/JetMET0/Run2024F-PromptReco-v1/MINIAOD",
+        #     "JetMET_Run2024F_1": "/JetMET1/Run2024F-PromptReco-v1/MINIAOD",
+        #     "JetMET_Run2024G_0": "/JetMET0/Run2024G-PromptReco-v1/MINIAOD",
+        #     "JetMET_Run2024G_1": "/JetMET1/Run2024G-PromptReco-v1/MINIAOD",
+        #     "JetMET_Run2024H_0": "/JetMET0/Run2024H-PromptReco-v1/MINIAOD",
+        #     "JetMET_Run2024H_1": "/JetMET1/Run2024H-PromptReco-v1/MINIAOD",
+        #     "JetMET_Run2024I_0": "/JetMET0/Run2024I-PromptReco-v1/MINIAOD",
+        #     "JetMET_Run2024I_1": "/JetMET1/Run2024I-PromptReco-v1/MINIAOD",
+        # },
     },
     "Muon": {
         "2022": {

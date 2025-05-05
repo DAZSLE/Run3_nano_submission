@@ -5,7 +5,7 @@ campaign:
   # User specific
   workArea: mc_summer23_qcdincl
   storageSite: T3_US_FNALLPC
-  outLFNDirBase: /store/user/abhijith/PFNano_Run3/
+  outLFNDirBase: /store/user/rkansal/PFNano_Run3/
   voGroup: null # or leave empty
 
   # Campaign specific
