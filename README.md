@@ -17,6 +17,12 @@ git clone git@github.com:DAZSLE/Run3_nano_submission.git -b NanoAODv14_140X
 cd Run3_nano_submission
 ```
 
+Also install the DAS client if you are fetching datasets:
+
+```bash
+pip3 install dbs3-client
+```
+
 ## Testing locally
 
 ```bash
