@@ -1,0 +1,65 @@
+{
+    "JetMET": {
+        "JetMET_Run2023C_0v1": "/JetMET0/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "JetMET_Run2023C_0v2": "/JetMET0/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "JetMET_Run2023C_0v3": "/JetMET0/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "JetMET_Run2023C_0v4": "/JetMET0/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "JetMET_Run2023C_1v1": "/JetMET1/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "JetMET_Run2023C_1v2": "/JetMET1/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "JetMET_Run2023C_1v3": "/JetMET1/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "JetMET_Run2023C_1v4": "/JetMET1/Run2023C-22Sep2023_v4-v1/MINIAOD"
+    },
+    "Muon": {
+        "Muon_Run2023C_0v1": "/Muon0/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "Muon_Run2023C_0v2": "/Muon0/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "Muon_Run2023C_0v3": "/Muon0/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "Muon_Run2023C_0v4": "/Muon0/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "Muon_Run2023C_1v1": "/Muon1/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "Muon_Run2023C_1v2": "/Muon1/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "Muon_Run2023C_1v3": "/Muon1/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "Muon_Run2023C_1v4": "/Muon1/Run2023C-22Sep2023_v4-v2/MINIAOD"
+    },
+    "EGamma": {
+        "EGamma_Run2023C_0v1": "/EGamma0/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "EGamma_Run2023C_0v2": "/EGamma0/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "EGamma_Run2023C_0v3": "/EGamma0/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "EGamma_Run2023C_0v4": "/EGamma0/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "EGamma_Run2023C_1v1": "/EGamma1/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "EGamma_Run2023C_1v2": "/EGamma1/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "EGamma_Run2023C_1v3": "/EGamma1/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "EGamma_Run2023C_1v4": "/EGamma1/Run2023C-22Sep2023_v4-v1/MINIAOD"
+    },
+    "Tau": {
+        "Tau_Run2023Cv1": "/Tau/Run2023C-22Sep2023_v1-v2/MINIAOD",
+        "Tau_Run2023Cv2": "/Tau/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "Tau_Run2023Cv3": "/Tau/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "Tau_Run2023Cv4": "/Tau/Run2023C-22Sep2023_v4-v1/MINIAOD"
+    },
+    "BTagMu": {
+        "BTagMu_Run2023Cv1": "/BTagMu/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "BTagMu_Run2023Cv2": "/BTagMu/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "BTagMu_Run2023Cv3": "/BTagMu/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "BTagMu_Run2023Cv4": "/BTagMu/Run2023C-22Sep2023_v4-v1/MINIAOD"
+    },
+    "MuonEG": {
+        "MuonEG_Run2023Cv1": "/MuonEG/Run2023C-22Sep2023_v1-v1/MINIAOD",
+        "MuonEG_Run2023Cv2": "/MuonEG/Run2023C-22Sep2023_v2-v1/MINIAOD",
+        "MuonEG_Run2023Cv3": "/MuonEG/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "MuonEG_Run2023Cv4": "/MuonEG/Run2023C-22Sep2023_v4-v1/MINIAOD"
+    },
+    "ParkingVBF": {
+        "ParkingVBF_Run2023C_4": "/ParkingVBF4/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "ParkingVBF_Run2023C_5": "/ParkingVBF5/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "ParkingVBF_Run2023C_6": "/ParkingVBF6/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "ParkingVBF_Run2023C_7": "/ParkingVBF7/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "ParkingVBF_Run2023C_0v1": "/ParkingVBF0/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "ParkingVBF_Run2023C_0v2": "/ParkingVBF0/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "ParkingVBF_Run2023C_1v1": "/ParkingVBF1/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "ParkingVBF_Run2023C_1v2": "/ParkingVBF1/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "ParkingVBF_Run2023C_2v1": "/ParkingVBF2/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "ParkingVBF_Run2023C_2v2": "/ParkingVBF2/Run2023C-22Sep2023_v4-v1/MINIAOD",
+        "ParkingVBF_Run2023C_3v1": "/ParkingVBF3/Run2023C-22Sep2023_v3-v1/MINIAOD",
+        "ParkingVBF_Run2023C_3v2": "/ParkingVBF3/Run2023C-22Sep2023_v4-v1/MINIAOD"
+    },
+    "ParkingSingleMuon": {}
+}

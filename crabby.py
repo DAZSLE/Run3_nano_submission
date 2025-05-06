@@ -275,14 +275,14 @@ def main(args):
 
     card = defaults | input_card
 
-    work_area = card["workArea"]
-    if os.path.isdir(work_area):
+    work_area = Path(card["workArea"])
+    if work_area.exists():
         if args.submit or args.make:
             # in python3, input replaces raw_input
-            if input("``workArea: {}`` already exists. Continue? (y/n)".format(work_area)) != "y":
+            if input(f"``workArea: {work_area}`` already exists. Continue? (y/n)") != "y":
                 exit()
     else:
-        os.mkdir(work_area)
+        work_area.mkdir(parents=True, exist_ok=True)
 
     if (card["tag_mod"] is not None) and (card["tag_extension"] is not None):
         print(

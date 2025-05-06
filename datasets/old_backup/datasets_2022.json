@@ -86,10 +86,19 @@
     "ZH_Hto2C_Zto2Q_M-125": "/ZH_Hto2C_Zto2Q_M-125_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v3/MINIAODSIM",
     "ggZH_Hto2C_Zto2Q_M-125": "/ggZH_Hto2C_Zto2Q_M-125_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v3/MINIAODSIM"
   },
+  "Htautau": {
+    "GluGluHToTauTau_M-125_TuneCP5_13p6TeV_powheg-pythia8": "/GluGluHToTauTau_M-125_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8": "/VBFHToTauTau_M125_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM"
+  },
   "DYJets": {
     "DYto2L-2Jets_MLL-50_0J": "/DYto2L-2Jets_MLL-50_0J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
     "DYto2L-2Jets_MLL-50_1J": "/DYto2L-2Jets_MLL-50_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
-    "DYto2L-2Jets_MLL-50_2J": "/DYto2L-2Jets_MLL-50_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM"
+    "DYto2L-2Jets_MLL-50_2J": "/DYto2L-2Jets_MLL-50_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "DYto2L-4Jets_MLL-50to120_HT-100to400": "/DYto2L-4Jets_MLL-50to120_HT-100to400_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v1/MINIAODSIM",
+    "DYto2L-4Jets_MLL-50to120_HT-1500to2500": "/DYto2L-4Jets_MLL-50to120_HT-1500to2500_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "DYto2L-4Jets_MLL-50to120_HT-2500": "/DYto2L-4Jets_MLL-50to120_HT-2500_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v3/MINIAODSIM",
+    "DYto2L-4Jets_MLL-50to120_HT-400to800": "/DYto2L-4Jets_MLL-50to120_HT-400to800_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v1/MINIAODSIM",
+    "DYto2L-4Jets_MLL-50to120_HT-800to1500": "/DYto2L-4Jets_MLL-50to120_HT-800to1500_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM"
   },
   "VJets": {
     "Wto2Q-2Jets_PTQQ-100to200_1J": "/Wto2Q-2Jets_PTQQ-100to200_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v1/MINIAODSIM",
@@ -108,6 +117,14 @@
     "Zto2Q-2Jets_PTQQ-400to600_2J": "/Zto2Q-2Jets_PTQQ-400to600_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
     "Zto2Q-2Jets_PTQQ-600_1J": "/Zto2Q-2Jets_PTQQ-600_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
     "Zto2Q-2Jets_PTQQ-600_2J": "/Zto2Q-2Jets_PTQQ-600_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v1/MINIAODSIM",
+    "Wto2Q-3Jets_HT-200to400": "/Wto2Q-3Jets_HT-200to400_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "Wto2Q-3Jets_HT-400to600": "/Wto2Q-3Jets_HT-400to600_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "Wto2Q-3Jets_HT-600to800": "/Wto2Q-3Jets_HT-600to800_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "Wto2Q-3Jets_HT-800": "/Wto2Q-3Jets_HT-800_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "Zto2Q-4Jets_HT-200to400": "/Zto2Q-4Jets_HT-200to400_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "Zto2Q-4Jets_HT-400to600": "/Zto2Q-4Jets_HT-400to600_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "Zto2Q-4Jets_HT-600to800": "/Zto2Q-4Jets_HT-600to800_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
+    "Zto2Q-4Jets_HT-800": "/Zto2Q-4Jets_HT-800_TuneCP5_13p6TeV_madgraphMLM-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
     "WtoLNu-2Jets_0J": "/WtoLNu-2Jets_0J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v3/MINIAODSIM",
     "WtoLNu-2Jets_1J": "/WtoLNu-2Jets_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM",
     "WtoLNu-2Jets_2J": "/WtoLNu-2Jets_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v2/MINIAODSIM"
@@ -124,29 +141,29 @@
     "ZZto4L-1Jets": "/ZZto4L-1Jets_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer22MiniAODv4-130X_mcRun3_2022_realistic_v5-v3/MINIAODSIM"
   },
   "JetMET": {
-    "JetHT_Run2022C": "/JetHT/Run2022C-22Sep2023-v1/MINIAOD",
-    "JetMET_Run2022C": "/JetMET/Run2022C-22Sep2023-v1/MINIAOD",
-    "JetMET_Run2022D": "/JetMET/Run2022D-22Sep2023-v1/MINIAOD"
+      "JetHT_Run2022C": "/JetHT/Run2022C-22Sep2023-v1/MINIAOD",
+      "JetMET_Run2022C": "/JetMET/Run2022C-22Sep2023-v1/MINIAOD",
+      "JetMET_Run2022D": "/JetMET/Run2022D-22Sep2023-v1/MINIAOD"
   },
   "Muon": {
-    "SingleMuon_Run2022C": "/SingleMuon/Run2022C-22Sep2023-v1/MINIAOD",
-    "Muon_Run2022C": "/Muon/Run2022C-22Sep2023-v1/MINIAOD",
-    "Muon_Run2022D": "/Muon/Run2022D-22Sep2023-v1/MINIAOD"
+      "SingleMuon_Run2022C": "/SingleMuon/Run2022C-22Sep2023-v1/MINIAOD",
+      "Muon_Run2022C": "/Muon/Run2022C-22Sep2023-v1/MINIAOD",
+      "Muon_Run2022D": "/Muon/Run2022D-22Sep2023-v1/MINIAOD"
   },
   "EGamma": {
-    "EGamma_Run2022C": "/EGamma/Run2022C-22Sep2023-v1/MINIAOD",
-    "EGamma_Run2022D": "/EGamma/Run2022D-22Sep2023-v1/MINIAOD"
+      "EGamma_Run2022C": "/EGamma/Run2022C-22Sep2023-v1/MINIAOD",
+      "EGamma_Run2022D": "/EGamma/Run2022D-22Sep2023-v1/MINIAOD"
   },
   "Tau": {
-    "Tau_Run2022C": "/Tau/Run2022C-22Sep2023-v1/MINIAOD",
-    "Tau_Run2022D": "/Tau/Run2022D-22Sep2023-v1/MINIAOD"
+      "Tau_Run2022C": "/Tau/Run2022C-22Sep2023-v1/MINIAOD",
+      "Tau_Run2022D": "/Tau/Run2022D-22Sep2023-v1/MINIAOD"
   },
   "BTagMu": {
-    "BTagMu_Run2022C": "/BTagMu/Run2022C-22Sep2023-v1/MINIAOD",
-    "BTagMu_Run2022D": "/BTagMu/Run2022D-22Sep2023-v1/MINIAOD"
+      "BTagMu_Run2022C": "/BTagMu/Run2022C-22Sep2023-v1/MINIAOD",
+      "BTagMu_Run2022D": "/BTagMu/Run2022D-22Sep2023-v1/MINIAOD"
   },
   "MuonEG": {
-    "MuonEG_Run2022C": "/MuonEG/Run2022C-22Sep2023-v1/MINIAOD",
-    "MuonEG_Run2022D": "/MuonEG/Run2022D-22Sep2023-v1/MINIAOD"
+      "MuonEG_Run2022C": "/MuonEG/Run2022C-22Sep2023-v1/MINIAOD",
+      "MuonEG_Run2022D": "/MuonEG/Run2022D-22Sep2023-v1/MINIAOD"
   }
 }
