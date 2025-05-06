@@ -18,7 +18,8 @@ git clone git@github.com:DAZSLE/Run3_nano_submission.git -b NanoAODv14_140X
 cd Run3_nano_submission
 ```
 
-Also install the DAS client if you are fetching datasets:
+Also install the DAS client if you are fetching datasets. 
+**Note:** DAS client does not work after sourcing crab-setup.sh!
 
 ```bash
 pip3 install dbs3-client
