@@ -1,3 +1,13 @@
+"""
+Get DATA datasets using the DAS API and save to JSONs
+
+Usage:
+    python get_datasets.py [--year YEAR] [--datasets DATASET]
+
+Author(s): Raghav Kansal
+"""
+
+
 import json
 from pprint import pprint
 from dbs.apis.dbsClient import DbsApi
