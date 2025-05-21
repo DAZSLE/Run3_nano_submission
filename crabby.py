@@ -249,20 +249,23 @@ def main(args):
     else:
         input_card = {}
 
-    with Path(f"datasets/datasets_{args.year}.json").open("r") as f:
-        datasets = json.load(f)[args.dataset]
-
     isData = args.dataset in DATASETS
     dlabel = "data" if isData else "mc"
     # mc_campaign = MC_CAMPAIGNS[args.year]
     # miniaod_version = "MINIAODv4"
+    if isData:
+        jsonFile = f"datasets/DATA_{args.year}.json"
+    else:
+        jsonFile = f"datasets/MC_{args.year}.json"
+    with Path(jsonFile).open("r") as f:
+        datasets = json.load(f)[args.dataset]
 
     defaults = {
         "name": f"{dlabel}_{args.year}_{args.dataset}",
         "crab_template": "template_crab.py",
         "workArea": f"crab/{dlabel}_{args.year}_{args.dataset}",
         "storageSite": "T3_US_FNALLPC",
-        "outLFNDirBase": f"/store/user/lpcpfnano/PFNano_Run3/25v1/{args.user}/{dlabel}_{args.year}",
+        "outLFNDirBase": f"/store/group/lpcpfnano/PFNano_Run3/25v1/{args.user}/{dlabel}_{args.year}",
         "voGroup": None,
         "publication": True,
         "config": f"configs/{CONFIGS[dlabel][args.year]}",
@@ -293,15 +296,7 @@ def main(args):
     with open(card["crab_template"], "r") as template_file:
         base_crab_config = template_file.read()
 
-    if card["datasets"].endswith(".txt"):
-        with open(card["datasets"], "r") as dataset_file:
-            datasets = [
-                d for d in dataset_file.read().split() if len(d) > 10 and not d.startswith("#")
-            ]
-    else:
-        datasets = [
-            d for d in card["datasets"].split("\n") if len(d) > 10 and not d.startswith("#")
-        ]
+    datasets = [value for key, value in card["datasets"].items() if len(value) > 10 and not value.startswith("#")]
 
     if args.make:
         make(card, datasets, base_crab_config, args.test)
