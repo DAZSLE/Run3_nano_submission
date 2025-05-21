@@ -4,18 +4,12 @@
 
 ## Installation
 
+Only tested on el9 machines.
+
 ```bash
-source /cvmfs/cms.cern.ch/cmsset_default.sh
-cmsrel CMSSW_14_0_6_patch1
-cd  CMSSW_14_0_6_patch1/src
-cmsenv
-scram-venv  # python venv
-cmsenv
-git cms-checkout-topic DAZSLE:CMSSW_14_0_6_BTVnano_GPT # Code is also in DAZSLE github
-scram b -j 4
-cd ../..
-git clone git@github.com:DAZSLE/Run3_nano_submission.git -b NanoAODv14_140X
+git clone https://github.com/DAZSLE/Run3_nano_submission
 cd Run3_nano_submission
+./setup.sh
 ```
 
 Also install the DAS client if you are fetching datasets. 
@@ -33,7 +27,7 @@ cmsRun.py configs/[CONFIG]
 
 ## Submission
 
-First, run this to set up crab>
+First, run this to set up crab:
 
 ```bash
 source /cvmfs/cms.cern.ch/common/crab-setup.sh

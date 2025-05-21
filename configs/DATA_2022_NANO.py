@@ -1,8 +1,8 @@
 # Auto generated configuration file
-# using:
-# Revision: 1.19
-# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v
-# with command line options: data_2023 --conditions 130X_dataRun3_Prompt_v1 --datatier NANOAOD --era Run3 --eventcontent NANOAOD --filein /store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root --fileout file:data_defaultAK4_2023.root --nThreads 4 --no_exec --number -1 --scenario pp --step NANO:@BTV --data --customise Configuration/DataProcessing/Utils.addMonitoring --customise_commands=process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000
+# using: 
+# Revision: 1.19 
+# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
+# with command line options: DATA_2022 --customise DAZSLE/DAZSLE/customize.customize --conditions 130X_dataRun3_Prompt_v1 --datatier NANOAOD --era Run3 --eventcontent NANOAOD --filein /store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root --fileout file:data_defaultAK4_2023.root --nThreads 1 --number 1 --scenario pp --step NANO:@BTV --data --customise_commands=process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000 --no_exec
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run3_cff import Run3
@@ -21,7 +21,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1),
+    input = cms.untracked.int32(1),
     output = cms.optional.untracked.allowed(cms.int32,cms.PSet)
 )
 
@@ -65,7 +65,7 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('data_2023 nevts:-1'),
+    annotation = cms.untracked.string('DATA_2022 nevts:1'),
     name = cms.untracked.string('Applications'),
     version = cms.untracked.string('$Revision: 1.19 $')
 )
@@ -99,26 +99,22 @@ process.schedule = cms.Schedule(process.nanoAOD_step,process.endjob_step,process
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 
-#Setup FWK for multithreaded
-process.options.numberOfThreads = 4
-process.options.numberOfStreams = 0
-
 # customisation of the process.
 
-# Automatic addition of the customisation function from Configuration.DataProcessing.Utils
-from Configuration.DataProcessing.Utils import addMonitoring
+# Automatic addition of the customisation function from DAZSLE.DAZSLE.customize
+from DAZSLE.DAZSLE.customize import customize 
 
-#call to customisation function addMonitoring imported from Configuration.DataProcessing.Utils
-process = addMonitoring(process)
+#call to customisation function customize imported from DAZSLE.DAZSLE.customize
+process = customize(process)
 
 # Automatic addition of the customisation function from PhysicsTools.NanoAOD.custom_btv_cff
-from PhysicsTools.NanoAOD.custom_btv_cff import BTVCustomNanoAOD
+from PhysicsTools.NanoAOD.custom_btv_cff import BTVCustomNanoAOD 
 
 #call to customisation function BTVCustomNanoAOD imported from PhysicsTools.NanoAOD.custom_btv_cff
 process = BTVCustomNanoAOD(process)
 
 # Automatic addition of the customisation function from PhysicsTools.NanoAOD.nano_cff
-from PhysicsTools.NanoAOD.nano_cff import nanoAOD_customizeCommon
+from PhysicsTools.NanoAOD.nano_cff import nanoAOD_customizeCommon 
 
 #call to customisation function nanoAOD_customizeCommon imported from PhysicsTools.NanoAOD.nano_cff
 process = nanoAOD_customizeCommon(process)

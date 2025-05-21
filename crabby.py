@@ -33,10 +33,10 @@ DATASETS = ["JetMET", "EGamma", "Muon", "MuonEG", "BTagMu", "Tau"]
 # }
 CONFIGS = {
     "data": {
-        "2022": "data_2022_NANO.py",
-        "2022EE": "data_2022_NANO.py",
-        "2023": "data_2023_NANO.py",
-        "2023BPix": "data_2023_NANO.py",
+        "2022": "DATA_2022_NANO.py",
+        "2022EE": "DATA_2022_NANO.py",
+        "2023": "DATA_2023_NANO.py",
+        "2023BPix": "DATA_2023_NANO.py",
     },
     "mc": {
         "2022": "MC_preEE2022_NANO.py",
