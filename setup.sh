@@ -16,7 +16,7 @@ run_cmd() {
   RESULT=$?
   if (( $RESULT != 0 )); then
     echo "Error while running '$@'"
-    kill -INT $$
+    exit $RESULT
   fi
 }
 
