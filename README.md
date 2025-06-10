@@ -22,7 +22,15 @@ pip3 install dbs3-client
 ## Testing locally
 
 ```bash
-cmsRun.py configs/[CONFIG]
+cmsRun configs/[CONFIG]
+```
+
+## HTML documentation
+
+To make documentation pages like [this](https://cms-nanoaod-integration.web.cern.ch/autoDoc/NanoAODv14/2024Prompt/doc_TTtoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8_RunIII2024Summer24NanoAOD-140X_mcRun3_2024_realistic_v26-v2.html) run:
+
+```bash
+python3 cmssw/CMSSW_14_0_6_patch1/src/PhysicsTools/NanoAOD/test/inspectNanoFile.py MC_defaultAK4.root -s website_with_collectionsize.html -d website_with_collectiondescription.html
 ```
 
 ## Submission
