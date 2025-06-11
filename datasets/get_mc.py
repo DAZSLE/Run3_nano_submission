@@ -123,6 +123,19 @@ SAMPLES = {
         Sample("ZZto2L2Q-1Jets*", 1),
         Sample("ZZto4L-1Jets*", 1),
     ],
+    "EWKV": [
+        Sample("VBFZto2Q*", 1),
+        Sample("VBFWto2Q*", 1),
+        Sample("VBFto2L_MLL-50*", 1),
+        Sample("VBFto2Nu*", 1),
+        Sample("VBFtoLNu*", 1),
+    ],
+    "VGamma": [
+        Sample("WGtoLNuG-1Jets_PTG-*", 5),
+        Sample("WGto2QG-1Jets_PTG-*", 2),
+        Sample("ZGto2NuG-1Jets_PTG-*", 5),
+        Sample("ZGto2QG-1Jets_PTG-*", 2),
+    ],
 }
 
 # Ignore any paths which contain these strings:
