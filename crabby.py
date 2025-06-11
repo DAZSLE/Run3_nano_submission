@@ -24,27 +24,24 @@ import hashlib
 
 
 DATASETS = ["JetMET", "EGamma", "Muon", "MuonEG", "BTagMu", "Tau"]
-# MC_CAMPAIGNS = {
-#     "2022": "Run3Summer22MiniAODv4",
-#     "2022EE": "Run3Summer22EEEMiniAODv4",
-#     "2023": "Run3Summer23MiniAODv4",
-#     "2023BPix": "Run3Summer23BPixMiniAODv4",
-#     # "2024": "Run3Summer24MiniAODv4",
-# }
+
 CONFIGS = {
     "data": {
-        "2022": "data_2022_NANO.py",
-        "2022EE": "data_2022_NANO.py",
-        "2023": "data_2023_NANO.py",
-        "2023BPix": "data_2023_NANO.py",
+        "2022": "DATA_2022_NANO.py",
+        "2022EE": "DATA_2022_NANO.py",
+        "2023": "DATA_2023_NANO.py",
+        "2023BPix": "DATA_2023_NANO.py",
+        "2024": "DATA_2024_NANO.py",
     },
     "mc": {
         "2022": "MC_preEE2022_NANO.py",
-        "2022EE": "MC_2022_NANO.py",
-        "2023": "MC_2023_NANO.py",
-        "2023BPix": "MC_postBPixå2023_NANO.py",
+        "2022EE": "MC_postEE2022_NANO.py",
+        "2023": "MC_preBPix2023_NANO.py",
+        "2023BPix": "MC_postBPix2023_NANO.py",
+        "2024": "MC_2024_NANO.py",
     },
 }
+
 JSONS = {
     "2022": "Cert_Collisions2022_355100_362760_Golden.json",
     "2022EE": "Cert_Collisions2022_355100_362760_Golden.json",
@@ -249,20 +246,23 @@ def main(args):
     else:
         input_card = {}
 
-    with Path(f"datasets/datasets_{args.year}.json").open("r") as f:
-        datasets = json.load(f)[args.dataset]
-
     isData = args.dataset in DATASETS
     dlabel = "data" if isData else "mc"
     # mc_campaign = MC_CAMPAIGNS[args.year]
     # miniaod_version = "MINIAODv4"
+    if isData:
+        jsonFile = f"datasets/DATA_{args.year}.json"
+    else:
+        jsonFile = f"datasets/MC_{args.year}.json"
+    with Path(jsonFile).open("r") as f:
+        datasets = json.load(f)[args.dataset]
 
     defaults = {
         "name": f"{dlabel}_{args.year}_{args.dataset}",
         "crab_template": "template_crab.py",
         "workArea": f"crab/{dlabel}_{args.year}_{args.dataset}",
         "storageSite": "T3_US_FNALLPC",
-        "outLFNDirBase": f"/store/user/lpcpfnano/PFNano_Run3/25v1/{args.user}/{dlabel}_{args.year}",
+        "outLFNDirBase": f"/store/group/lpcpfnano/PFNano_Run3/25v1/{args.user}/{dlabel}_{args.year}",
         "voGroup": None,
         "publication": True,
         "config": f"configs/{CONFIGS[dlabel][args.year]}",
@@ -275,14 +275,14 @@ def main(args):
 
     card = defaults | input_card
 
-    work_area = card["workArea"]
-    if os.path.isdir(work_area):
+    work_area = Path(card["workArea"])
+    if work_area.exists():
         if args.submit or args.make:
             # in python3, input replaces raw_input
-            if input("``workArea: {}`` already exists. Continue? (y/n)".format(work_area)) != "y":
+            if input(f"``workArea: {work_area}`` already exists. Continue? (y/n)") != "y":
                 exit()
     else:
-        os.mkdir(work_area)
+        work_area.mkdir(parents=True, exist_ok=True)
 
     if (card["tag_mod"] is not None) and (card["tag_extension"] is not None):
         print(
@@ -293,15 +293,7 @@ def main(args):
     with open(card["crab_template"], "r") as template_file:
         base_crab_config = template_file.read()
 
-    if card["datasets"].endswith(".txt"):
-        with open(card["datasets"], "r") as dataset_file:
-            datasets = [
-                d for d in dataset_file.read().split() if len(d) > 10 and not d.startswith("#")
-            ]
-    else:
-        datasets = [
-            d for d in card["datasets"].split("\n") if len(d) > 10 and not d.startswith("#")
-        ]
+    datasets = [value for key, value in card["datasets"].items() if len(value) > 10 and not value.startswith("#")]
 
     if args.make:
         make(card, datasets, base_crab_config, args.test)

@@ -1,0 +1,41 @@
+{
+    "JetMET": {
+        "JetMET_Run2022E": "/JetMET/Run2022E-22Sep2023-v1/MINIAOD",
+        "JetMET_Run2022F": "/JetMET/Run2022F-22Sep2023-v2/MINIAOD",
+        "JetMET_Run2022G": "/JetMET/Run2022G-22Sep2023-v2/MINIAOD"
+    },
+    "Muon": {
+        "Muon_Run2022E": "/Muon/Run2022E-22Sep2023-v1/MINIAOD",
+        "Muon_Run2022F": "/Muon/Run2022F-22Sep2023-v2/MINIAOD",
+        "Muon_Run2022G": "/Muon/Run2022G-22Sep2023-v1/MINIAOD"
+    },
+    "EGamma": {
+        "EGamma_Run2022E": "/EGamma/Run2022E-22Sep2023-v1/MINIAOD",
+        "EGamma_Run2022F": "/EGamma/Run2022F-22Sep2023-v1/MINIAOD",
+        "EGamma_Run2022G": "/EGamma/Run2022G-22Sep2023-v2/MINIAOD"
+    },
+    "Tau": {
+        "Tau_Run2022E": "/Tau/Run2022E-22Sep2023-v1/MINIAOD",
+        "Tau_Run2022F": "/Tau/Run2022F-22Sep2023-v1/MINIAOD",
+        "Tau_Run2022G": "/Tau/Run2022G-22Sep2023-v1/MINIAOD"
+    },
+    "BTagMu": {
+        "BTagMu_Run2022E": "/BTagMu/Run2022E-22Sep2023-v1/MINIAOD",
+        "BTagMu_Run2022F": "/BTagMu/Run2022F-22Sep2023-v2/MINIAOD",
+        "BTagMu_Run2022G": "/BTagMu/Run2022G-22Sep2023-v1/MINIAOD"
+    },
+    "MuonEG": {
+        "MuonEG_Run2022E": "/MuonEG/Run2022E-22Sep2023-v1/MINIAOD",
+        "MuonEG_Run2022F": "/MuonEG/Run2022F-22Sep2023-v1/MINIAOD",
+        "MuonEG_Run2022G": "/MuonEG/Run2022G-22Sep2023-v1/MINIAOD"
+    },
+    "ParkingVBF": {},
+    "ParkingSingleMuon": {
+        "ParkingSingleMuon_Run2022F_0": "/ParkingSingleMuon0/Run2022F-22Sep2023-v1/MINIAOD",
+        "ParkingSingleMuon_Run2022F_1": "/ParkingSingleMuon1/Run2022F-22Sep2023-v1/MINIAOD",
+        "ParkingSingleMuon_Run2022F_2": "/ParkingSingleMuon2/Run2022F-22Sep2023-v1/MINIAOD",
+        "ParkingSingleMuon_Run2022G_0": "/ParkingSingleMuon0/Run2022G-22Sep2023-v2/MINIAOD",
+        "ParkingSingleMuon_Run2022G_1": "/ParkingSingleMuon1/Run2022G-22Sep2023-v1/MINIAOD",
+        "ParkingSingleMuon_Run2022G_2": "/ParkingSingleMuon2/Run2022G-22Sep2023-v1/MINIAOD"
+    }
+}
