@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: MC_postBPix2023 --fileout file:MC_postBPix2023.root --conditions 140X_mcRun3_2023_realistic_v9 --filein /store/mc/Run3Summer23BPixMiniAODv4/DYTo2L_MLL-4to50_TuneCP5_13p6TeV_pythia8/MINIAODSIM/130X_mcRun3_2023_realistic_postBPix_v2-v1/60000/661a9e9a-e693-4216-9ea1-8d03793951ab.root --customise DAZSLE/DAZSLE/customize.customize --step NANO:@BTV --scenario pp --customise_commands="process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec -n 10 --nThreads 4 --era Run3 --eventcontent NANOAODSIM --datatier NANOAODSIM --mc
+# with command line options: DATA_2023 --fileout file:DATA_2023.root --conditions 140X_dataRun3_v20 --filein /store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root --customise DAZSLE/DAZSLE/customize.customize --step NANO:@BTV --scenario pp --customise_commands="process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec -n 10 --nThreads 4 --era Run3 --eventcontent NANOAOD --datatier NANOAOD --data
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run3_cff import Run3
@@ -14,7 +14,6 @@ process.load('Configuration.StandardSequences.Services_cff')
 process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 process.load('FWCore.MessageService.MessageLogger_cfi')
 process.load('Configuration.EventContent.EventContent_cff')
-process.load('SimGeneral.MixingModule.mixNoPU_cfi')
 process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('PhysicsTools.NanoAOD.nano_cff')
@@ -28,7 +27,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('/store/mc/Run3Summer23BPixMiniAODv4/DYTo2L_MLL-4to50_TuneCP5_13p6TeV_pythia8/MINIAODSIM/130X_mcRun3_2023_realistic_postBPix_v2-v1/60000/661a9e9a-e693-4216-9ea1-8d03793951ab.root'),
+    fileNames = cms.untracked.vstring('/store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root'),
     secondaryFileNames = cms.untracked.vstring()
 )
 
@@ -66,37 +65,37 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('MC_postBPix2023 nevts:10'),
+    annotation = cms.untracked.string('DATA_2023 nevts:10'),
     name = cms.untracked.string('Applications'),
     version = cms.untracked.string('$Revision: 1.19 $')
 )
 
 # Output definition
 
-process.NANOAODSIMoutput = cms.OutputModule("NanoAODOutputModule",
+process.NANOAODoutput = cms.OutputModule("NanoAODOutputModule",
     compressionAlgorithm = cms.untracked.string('LZMA'),
     compressionLevel = cms.untracked.int32(9),
     dataset = cms.untracked.PSet(
-        dataTier = cms.untracked.string('NANOAODSIM'),
+        dataTier = cms.untracked.string('NANOAOD'),
         filterName = cms.untracked.string('')
     ),
-    fileName = cms.untracked.string('file:MC_postBPix2023.root'),
-    outputCommands = process.NANOAODSIMEventContent.outputCommands
+    fileName = cms.untracked.string('file:DATA_2023.root'),
+    outputCommands = process.NANOAODEventContent.outputCommands
 )
 
 # Additional output definition
 
 # Other statements
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '140X_mcRun3_2023_realistic_v9', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '140X_dataRun3_v20', '')
 
 # Path and EndPath definitions
-process.nanoAOD_step = cms.Path(process.nanoSequenceMC)
+process.nanoAOD_step = cms.Path(process.nanoSequence)
 process.endjob_step = cms.EndPath(process.endOfProcess)
-process.NANOAODSIMoutput_step = cms.EndPath(process.NANOAODSIMoutput)
+process.NANOAODoutput_step = cms.EndPath(process.NANOAODoutput)
 
 # Schedule definition
-process.schedule = cms.Schedule(process.nanoAOD_step,process.endjob_step,process.NANOAODSIMoutput_step)
+process.schedule = cms.Schedule(process.nanoAOD_step,process.endjob_step,process.NANOAODoutput_step)
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 

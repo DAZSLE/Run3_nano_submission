@@ -175,3 +175,5 @@ cython_debug/
 
 # submissions
 crab
+CMSSW*
+*.root

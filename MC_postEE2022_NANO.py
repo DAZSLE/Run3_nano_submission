@@ -1,8 +1,8 @@
 # Auto generated configuration file
-# using:
-# Revision: 1.19
-# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v
-# with command line options: data_2022 --conditions 130X_dataRun3_Prompt_v1 --datatier NANOAOD --era Run3 --eventcontent NANOAOD --filein /store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root --fileout file:data_defaultAK4_2023.root --nThreads 4 --no_exec --number 50 --scenario pp --step NANO:@BTV --data --customise Configuration/DataProcessing/Utils.addMonitoring --customise_commands=process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000
+# using: 
+# Revision: 1.19 
+# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
+# with command line options: MC_postEE2022 --fileout file:MC_postEE2022.root --conditions 140X_mcRun3_2022_realistic_v12 --filein /store/mc/Run3Summer22EEMiniAODv4/VBFHHto2B2Tau_CV_1_C2V_0_C3_1_TuneCP5_13p6TeV_madgraph-pythia8/MINIAODSIM/130X_mcRun3_2022_realistic_postEE_v6-v2/2520000/64400fec-6979-4a7e-8737-2c4219ecb1be.root --customise DAZSLE/DAZSLE/customize.customize --step NANO:@BTV --scenario pp --customise_commands=process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000 -n 10 --nThreads 1 --era Run3 --eventcontent NANOAODSIM --datatier NANOAODSIM --mc
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run3_cff import Run3
@@ -14,6 +14,7 @@ process.load('Configuration.StandardSequences.Services_cff')
 process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 process.load('FWCore.MessageService.MessageLogger_cfi')
 process.load('Configuration.EventContent.EventContent_cff')
+process.load('SimGeneral.MixingModule.mixNoPU_cfi')
 process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('PhysicsTools.NanoAOD.nano_cff')
@@ -21,13 +22,13 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(50),
+    input = cms.untracked.int32(10),
     output = cms.optional.untracked.allowed(cms.int32,cms.PSet)
 )
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('/store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root'),
+    fileNames = cms.untracked.vstring('/store/mc/Run3Summer22EEMiniAODv4/VBFHHto2B2Tau_CV_1_C2V_0_C3_1_TuneCP5_13p6TeV_madgraph-pythia8/MINIAODSIM/130X_mcRun3_2022_realistic_postEE_v6-v2/2520000/64400fec-6979-4a7e-8737-2c4219ecb1be.root'),
     secondaryFileNames = cms.untracked.vstring()
 )
 
@@ -65,60 +66,56 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('data_2022 nevts:50'),
+    annotation = cms.untracked.string('MC_postEE2022 nevts:10'),
     name = cms.untracked.string('Applications'),
     version = cms.untracked.string('$Revision: 1.19 $')
 )
 
 # Output definition
 
-process.NANOAODoutput = cms.OutputModule("NanoAODOutputModule",
+process.NANOAODSIMoutput = cms.OutputModule("NanoAODOutputModule",
     compressionAlgorithm = cms.untracked.string('LZMA'),
     compressionLevel = cms.untracked.int32(9),
     dataset = cms.untracked.PSet(
-        dataTier = cms.untracked.string('NANOAOD'),
+        dataTier = cms.untracked.string('NANOAODSIM'),
         filterName = cms.untracked.string('')
     ),
-    fileName = cms.untracked.string('file:data_defaultAK4_2023.root'),
-    outputCommands = process.NANOAODEventContent.outputCommands
+    fileName = cms.untracked.string('file:MC_postEE2022.root'),
+    outputCommands = process.NANOAODSIMEventContent.outputCommands
 )
 
 # Additional output definition
 
 # Other statements
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '130X_dataRun3_Prompt_v1', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '140X_mcRun3_2022_realistic_v12', '')
 
 # Path and EndPath definitions
-process.nanoAOD_step = cms.Path(process.nanoSequence)
+process.nanoAOD_step = cms.Path(process.nanoSequenceMC)
 process.endjob_step = cms.EndPath(process.endOfProcess)
-process.NANOAODoutput_step = cms.EndPath(process.NANOAODoutput)
+process.NANOAODSIMoutput_step = cms.EndPath(process.NANOAODSIMoutput)
 
 # Schedule definition
-process.schedule = cms.Schedule(process.nanoAOD_step,process.endjob_step,process.NANOAODoutput_step)
+process.schedule = cms.Schedule(process.nanoAOD_step,process.endjob_step,process.NANOAODSIMoutput_step)
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 
-#Setup FWK for multithreaded
-process.options.numberOfThreads = 4
-process.options.numberOfStreams = 0
-
 # customisation of the process.
 
-# Automatic addition of the customisation function from Configuration.DataProcessing.Utils
-from Configuration.DataProcessing.Utils import addMonitoring
+# Automatic addition of the customisation function from DAZSLE.DAZSLE.customize
+from DAZSLE.DAZSLE.customize import customize 
 
-#call to customisation function addMonitoring imported from Configuration.DataProcessing.Utils
-process = addMonitoring(process)
+#call to customisation function customize imported from DAZSLE.DAZSLE.customize
+process = customize(process)
 
 # Automatic addition of the customisation function from PhysicsTools.NanoAOD.custom_btv_cff
-from PhysicsTools.NanoAOD.custom_btv_cff import BTVCustomNanoAOD
+from PhysicsTools.NanoAOD.custom_btv_cff import BTVCustomNanoAOD 
 
 #call to customisation function BTVCustomNanoAOD imported from PhysicsTools.NanoAOD.custom_btv_cff
 process = BTVCustomNanoAOD(process)
 
 # Automatic addition of the customisation function from PhysicsTools.NanoAOD.nano_cff
-from PhysicsTools.NanoAOD.nano_cff import nanoAOD_customizeCommon
+from PhysicsTools.NanoAOD.nano_cff import nanoAOD_customizeCommon 
 
 #call to customisation function nanoAOD_customizeCommon imported from PhysicsTools.NanoAOD.nano_cff
 process = nanoAOD_customizeCommon(process)
@@ -128,7 +125,7 @@ process = nanoAOD_customizeCommon(process)
 
 # Customisation from command line
 
-process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000
+process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)
