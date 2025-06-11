@@ -137,9 +137,9 @@ SAMPLES = {
     ],
     "VGamma": [
         Sample("WGtoLNuG-1Jets_PTG-*", 5),
-        Sample("WGto2QG-1Jets_PTG-*", 2, strict=False),
+        Sample("WGto2QG-1Jets_PTG-*", 2, strict=False),  # Extra PTG-10 dataset in 2023
         Sample("ZGto2NuG-1Jets_PTG-*", 5),
-        Sample("ZGto2QG-1Jets_PTG-*", 2, strict=False),
+        Sample("ZGto2QG-1Jets_PTG-*", 2, strict=False),  # Extra PTG-10 dataset in 2023
     ],
 }
 
