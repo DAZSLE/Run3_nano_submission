@@ -1,11 +1,11 @@
-#################################################################
-# Makes configs for MC and Data
+####################################################################################################
+# Makes configs for MC and Data, including customizations such as saving all PFCands
 #
 # Links: (and more below)
 # https://gitlab.cern.ch/cms-nanoAOD/nanoaod-doc/-/wikis/Releases/NanoAODv14#run3-2024-data-prompt-and-mc
 #
 # Author(s): Raghav Kansal
-#################################################################
+####################################################################################################
 
 NEVENTS=10
 NTHREADS=4
@@ -67,3 +67,11 @@ cmsDriver.py $name --fileout file:$name.root --conditions $gt --filein $filein $
 name=DATA_2024
 filein=/store/data/Run2024E/BTagMu/MINIAOD/2024CDEReprocessing-v1/120000/0f8aeefe-1ccd-44a1-ba6d-dcb521f34188.root
 cmsDriver.py $name --fileout file:$name.root --conditions $gt --filein $filein $base_args_data
+
+
+############# Customization #############
+
+# Replace BTVCustomNanoAOD with BTVCustomNanoAOD_allPF in all generated files
+for file in *.py; do
+    sed -i 's/BTVCustomNanoAOD/BTVCustomNanoAOD_allPF/g' "$file"
+done

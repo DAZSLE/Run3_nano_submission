@@ -1,4 +1,4 @@
-# Run3_nano_submission
+# Run 3 PFNano Submission
 
 [![Codestyle](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
@@ -9,6 +9,7 @@ Only tested on el9 machines.
 ```bash
 git clone https://github.com/DAZSLE/Run3_nano_submission
 cd Run3_nano_submission
+git checkout NanoAODv14_140X
 ./setup.sh
 ```
 

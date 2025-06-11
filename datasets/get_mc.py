@@ -10,12 +10,20 @@ Author(s): Raghav Kansal
 from dataclasses import dataclass, field
 import json
 from pprint import pprint
-from dbs.apis.dbsClient import DbsApi
 import argparse
+from pathlib import Path
 
-from utils import print_red, add_bool_arg
+try:
+    from utils import print_red, add_bool_arg
+except ImportError:
+    print("Could not import utils.py! get_mc.py should be run from the `datasets` directory.")
 
-dbs = DbsApi("https://cmsweb.cern.ch/dbs/prod/global/DBSReader")
+try:
+    from dbs.apis.dbsClient import DbsApi
+    dbs = DbsApi("https://cmsweb.cern.ch/dbs/prod/global/DBSReader")
+except ModuleNotFoundError:
+    print("DAS API not found! Please install dbs-client package with `pip3 install dbs3-client`.")
+
 
 YEARS = ["2022", "2022EE", "2023", "2023BPix", "2024"]
 YEARS_2022_23 = ["2022", "2022EE", "2023", "2023BPix"]
@@ -58,7 +66,7 @@ class Sample:
 
 SAMPLES = {
     # sample name: Subsample(selector, # expected datasets)
-    # Adding the right number of expected datasets is a useful check!
+    # !!! Adding the right number of expected datasets is a useful check! !!!
     "HH4b": [Sample("GluGlutoHHto4B*", 4), Sample("VBFHHto4B*", 10)],
     # Not strict because of extra FS22 datasets in 2022
     "HHbbtt": [Sample("GluGlutoHHto2B2Tau*", 4, strict=False), Sample("VBFHHto2B2Tau*", 10)],
@@ -95,7 +103,11 @@ SAMPLES = {
         # temporarily while waiting for [0-2]J datasets
         Sample("DYto2L-2Jets_MLL-50_TuneCP5_13p6TeV*", 11, strict=False, years=YEARS_2024),
     ],
-    "VJetsLO": [Sample("Wto2Q-3Jets_HT*", 4), Sample("WtoLNu-4Jets_*J*", 4), Sample("Zto2Q-4Jets_HT*", 4)],
+    "VJetsLO": [
+        Sample("Wto2Q-3Jets_HT*", 4),
+        Sample("WtoLNu-4Jets_*J*", 4),
+        Sample("Zto2Q-4Jets_HT*", 4),
+    ],
     "VJetsNLO": [
         Sample("Wto2Q-2Jets_PT*", 8),
         Sample("WtoLNu-2Jets_*J*", 3),
@@ -132,9 +144,9 @@ SAMPLES = {
     ],
     "VGamma": [
         Sample("WGtoLNuG-1Jets_PTG-*", 5),
-        Sample("WGto2QG-1Jets_PTG-*", 2),
+        Sample("WGto2QG-1Jets_PTG-*", 2, strict=False),  # Extra PTG-10 dataset in 2023
         Sample("ZGto2NuG-1Jets_PTG-*", 5),
-        Sample("ZGto2QG-1Jets_PTG-*", 2),
+        Sample("ZGto2QG-1Jets_PTG-*", 2, strict=False),  # Extra PTG-10 dataset in 2023
     ],
 }
 
@@ -211,28 +223,29 @@ def get_mc(samples: list[str] = list(SAMPLES.keys()), year: str = "2024", tsg: b
                 print_red("\t\tNo datasets found!")
                 if subsample.isStrict(year) and subsample.expected_datasets > 0:
                     raise ValueError(
-                        f"This subsample has a strict requirement for {subsample.expected_datasets} datasets!"
+                        f"This subsample has a strict requirement for {subsample.expected_datasets} dataset(s)!"
                     )
             elif num_datasets > subsample.expected_datasets:
                 print_red(
-                    f"\t\tFound {num_datasets} datasets, {num_datasets - subsample.expected_datasets} more than expected!"
+                    f"\t\tFound {num_datasets} dataset(s), {num_datasets - subsample.expected_datasets} more than expected!"
                 )
                 if subsample.isStrict(year):
+                    print(f"\nAll datasets found for {sample}:")
                     pprint([list(entries[0].values())[0]["dataset"] for entries in tdict.values()])
                     raise ValueError(
-                        f"This subsample has a strict requirement for {subsample.expected_datasets} datasets!"
+                        f"This subsample has a strict requirement for {subsample.expected_datasets} dataset(s)!"
                     )
             elif num_datasets < subsample.expected_datasets:
                 print_red(
-                    f"\t\tFound {num_datasets} datasets, {subsample.expected_datasets - num_datasets} fewer than expected!"
+                    f"\t\tFound {num_datasets} dataset(s), {subsample.expected_datasets - num_datasets} fewer than expected!"
                 )
                 if subsample.isStrict(year) or subsample.isStrictgt(year):
                     pprint([list(entries[0].values())[0]["dataset"] for entries in tdict.values()])
                     raise ValueError(
-                        f"This subsample has a strict requirement for (at least) {subsample.expected_datasets} datasets!"
+                        f"This subsample has a strict requirement for (at least) {subsample.expected_datasets} dataset(s)!"
                     )
             else:
-                print(f"\t\tFound {num_datasets} datasets as expected.")
+                print(f"\t\tFound {num_datasets} dataset(s) as expected.")
 
         for dname, dlist in list(tdict.items()):
             if len(dlist) > 1:
@@ -326,14 +339,51 @@ if __name__ == "__main__":
         help=f"List of samples to query (default: {list(SAMPLES.keys())})",
     )
     add_bool_arg(parser, "save", "Save the datasets to a JSON file", default=True)
+    add_bool_arg(
+        parser,
+        "append",
+        "Append new samples to the JSON file (rather than overwriting it completely) if it already exists. If you want to overwrite the specific input samples, use --overwrite-samples.",
+        default=True,
+    )
+    add_bool_arg(
+        parser,
+        "overwrite-samples",
+        "Overwrite existing samples in the JSON file (if append is True). Will give an error if this is False, append is True, and the samples are already in the JSON file.",
+        default=False,
+    )
     add_bool_arg(parser, "tsg", "Allow TSG samples", default=False)
 
     args = parser.parse_args()
 
     if args.save:
         for year in args.years:
-            ddict = get_mc(samples=args.samples, year=year, tsg=args.tsg)
+            tsamples = args.samples.copy()
+            
+            if args.append and Path(f"MC_{year}.json").exists():
+                print(f"Appending to {f'MC_{year}.json'}")
+                with Path(f"MC_{year}.json").open("r") as f:
+                    ddict = json.load(f)
+            else:
+                ddict = {}
+                if Path(f"MC_{year}.json").exists():
+                    print_red(f"Overwriting {f'MC_{year}.json'}!")
+
+            if not args.overwrite_samples:
+                for sample in tsamples.copy():
+                    if sample in ddict:
+                        print_red(f"Sample {sample} already exists in {f'MC_{year}.json'} - skipping! If you want to overwrite it, use the --overwrite-samples option.")
+                        tsamples.remove(sample)
+
+            ddict_new = get_mc(samples=tsamples, year=year, tsg=args.tsg)
+
+            for sample in ddict_new:
+                if sample in ddict:
+                    if args.overwrite_samples:
+                        print(f"Overwriting {sample} in {f'MC_{year}.json'}!")
+                        ddict[sample] = ddict_new[sample]
+                else:
+                    ddict[sample] = ddict_new[sample]
 
             # save to json
-            with open(f"MC_{year}.json", "w") as f:
+            with Path(f"MC_{year}.json").open("w") as f:
                 json.dump(ddict, f, indent=4)

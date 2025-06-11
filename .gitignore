@@ -177,3 +177,7 @@ cython_debug/
 crab
 CMSSW*
 *.root
+CrabStatus.csv
+
+# testing
+test.ipynb
