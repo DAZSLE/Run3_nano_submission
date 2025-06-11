@@ -7,13 +7,21 @@ Usage:
 Author(s): Raghav Kansal
 """
 
-
 import json
 from pprint import pprint
-from dbs.apis.dbsClient import DbsApi
 import argparse
 
-dbs = DbsApi("https://cmsweb.cern.ch/dbs/prod/global/DBSReader")
+try:
+    from utils import print_red
+except ModuleNotFoundError:
+    print("Could not import utils.py! get_datasets.py should be run from the `datasets` directory.")
+
+try:
+    from dbs.apis.dbsClient import DbsApi
+    dbs = DbsApi("https://cmsweb.cern.ch/dbs/prod/global/DBSReader")
+except ModuleNotFoundError:
+    print("DAS API not found! Please install dbs-client package with `pip3 install dbs3-client`.")
+
 
 DATASETS = {
     # Name: selectors
