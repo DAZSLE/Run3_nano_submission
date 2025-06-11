@@ -24,27 +24,24 @@ import hashlib
 
 
 DATASETS = ["JetMET", "EGamma", "Muon", "MuonEG", "BTagMu", "Tau"]
-# MC_CAMPAIGNS = {
-#     "2022": "Run3Summer22MiniAODv4",
-#     "2022EE": "Run3Summer22EEEMiniAODv4",
-#     "2023": "Run3Summer23MiniAODv4",
-#     "2023BPix": "Run3Summer23BPixMiniAODv4",
-#     # "2024": "Run3Summer24MiniAODv4",
-# }
+
 CONFIGS = {
     "data": {
         "2022": "DATA_2022_NANO.py",
         "2022EE": "DATA_2022_NANO.py",
         "2023": "DATA_2023_NANO.py",
         "2023BPix": "DATA_2023_NANO.py",
+        "2024": "DATA_2024_NANO.py",
     },
     "mc": {
         "2022": "MC_preEE2022_NANO.py",
-        "2022EE": "MC_2022_NANO.py",
-        "2023": "MC_2023_NANO.py",
-        "2023BPix": "MC_postBPixå2023_NANO.py",
+        "2022EE": "MC_postEE2022_NANO.py",
+        "2023": "MC_preBPix2023_NANO.py",
+        "2023BPix": "MC_postBPix2023_NANO.py",
+        "2024": "MC_2024_NANO.py",
     },
 }
+
 JSONS = {
     "2022": "Cert_Collisions2022_355100_362760_Golden.json",
     "2022EE": "Cert_Collisions2022_355100_362760_Golden.json",

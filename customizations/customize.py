@@ -112,12 +112,13 @@ def customizeTaus(process):
 
 
 def customizeBoostedTaus(process):
-    cuts = []
-    for vs, score in [("jet", 0.72), ("e", 0.05), ("mu", 0.001)]:
-        cuts.append(f"tauID('byBoostedDeepTau20161718v2p0VS{vs}raw') > {score}")
-    deepTauCut = "(" + " && ".join(cuts) + ")"
+    # cuts = []
+    # for vs, score in [("jet", 0.72), ("e", 0.05), ("mu", 0.001)]:
+    #     cuts.append(f"tauID('byBoostedDeepTau20161718v2p0VS{vs}raw') > {score}")
+    # deepTauCut = "(" + " && ".join(cuts) + ")"
 
-    process.finalBoostedTaus.cut = f"pt > 18 && tauID('decayModeFindingNewDMs') && ( {deepTauCut} )"
+    # process.finalBoostedTaus.cut = f"pt > 18 && tauID('decayModeFindingNewDMs') && ( {deepTauCut} )"
+    process.finalBoostedTaus.cut = "pt > 18 && tauID('decayModeFindingNewDMs')"
 
     return process
 
@@ -192,7 +193,7 @@ def customize(process):
     # customize stored objects
     # process = customizeGenParticles(process)  # conflicts with BTV variables
     process = customizeTaus(process)
-    #   process = customizeBoostedTaus(process)
+    process = customizeBoostedTaus(process)
 
     from PhysicsTools.NanoAOD.leptonTimeLifeInfo_common_cff import addTrackVarsToTimeLifeInfo
 

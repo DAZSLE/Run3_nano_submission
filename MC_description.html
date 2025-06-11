@@ -1,7 +1,7 @@
 
     <html>
     <head>
-        <title>Documentation for MC_defaultAK4.root </title>
+        <title>Documentation for MC_postEE2022.root </title>
         <link rel="stylesheet" type="text/css" href="http://gpetrucc.web.cern.ch/gpetrucc/micro/patsize.css" />
     </head>
     <body>
@@ -10,6 +10,7 @@
         <table>
         <tr class='header'><th>Collection</th><th>Description</th></tr>
 <th><a href='#LHEPdfSumw'>LHEPdfSumw</a></th><td style='text-align : left;'>Sum of genEventWeight * LHEPdfWeight[i], divided by genEventSumw</td></tr>
+<th><a href='#LHEReweightingSumw'>LHEReweightingSumw</a></th><td style='text-align : left;'>Sum of genEventWeight * LHEReweightingWeight[i], divided by genEventSumw</td></tr>
 <th><a href='#LHEScaleSumw'>LHEScaleSumw</a></th><td style='text-align : left;'>Sum of genEventWeight * LHEScaleWeight[i], divided by genEventSumw</td></tr>
 <th><a href='#PSSumw'>PSSumw</a></th><td style='text-align : left;'>Sum of genEventWeight * PSWeight[i], divided by genEventSumw</td></tr>
 <th><a href='#genEventCount'>genEventCount</a></th><td style='text-align : left;'>event count</td></tr>
@@ -24,6 +25,12 @@
 <tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
 <th>LHEPdfSumw</th><td style='text-align : left;'>Double_t</td><td style='text-align : left;'>Sum of genEventWeight * LHEPdfWeight[i], divided by genEventSumw</td></tr>
 <th>nLHEPdfSumw</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Number of entries in LHEPdfSumw</td></tr>
+</table>
+<h2><a name='LHEReweightingSumw' id='LHEReweightingSumw'>LHEReweightingSumw</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>LHEReweightingSumw</th><td style='text-align : left;'>Double_t</td><td style='text-align : left;'>Sum of genEventWeight * LHEReweightingWeight[i], divided by genEventSumw</td></tr>
+<th>nLHEReweightingSumw</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Number of entries in LHEReweightingSumw</td></tr>
 </table>
 <h2><a name='LHEScaleSumw' id='LHEScaleSumw'>LHEScaleSumw</a> <sup><a href="#top">[back to top]</a></sup></h2>
 <table>
@@ -129,13 +136,19 @@
 <th><a href='#L1'>L1</a></th><td style='text-align : left;'>Trigger/flag bit (process: NANO)</td></tr>
 <th><a href='#L1Reco'>L1Reco</a></th><td style='text-align : left;'>Trigger/flag bit (process: RECO)</td></tr>
 <th><a href='#L1simulation'>L1simulation</a></th><td style='text-align : left;'>Trigger/flag bit (process: HLT)</td></tr>
+<th><a href='#LHE'>LHE</a></th><td style='text-align : left;'>Number of jets (partons) at LHE step</td></tr>
+<th><a href='#LHEPart'>LHEPart</a></th><td style='text-align : left;'>PDG ID of LHE particles</td></tr>
+<th><a href='#LHEPdfWeight'>LHEPdfWeight</a></th><td style='text-align : left;'>LHE pdf variation weights (w_var / w_nominal) for LHA IDs 325500 - 325600</td></tr>
+<th><a href='#LHEReweightingWeight'>LHEReweightingWeight</a></th><td style='text-align : left;'></td></tr>
+<th><a href='#LHEScaleWeight'>LHEScaleWeight</a></th><td style='text-align : left;'>LHE scale variation weights (w_var / w_nominal); [0] is MUF="0.5" MUR="0.5"; [1] is MUF="1.0" MUR="0.5"; [2] is MUF="2.0" MUR="0.5"; [3] is MUF="0.5" MUR="1.0"; [4] is MUF="2.0" MUR="1.0"; [5] is MUF="0.5" MUR="2.0"; [6] is MUF="1.0" MUR="2.0"; [7] is MUF="2.0" MUR="2.0"</td></tr>
+<th><a href='#LHEWeight'>LHEWeight</a></th><td style='text-align : left;'>Nominal event weight in the LHE file</td></tr>
 <th><a href='#LowPtElectron'>LowPtElectron</a></th><td style='text-align : left;'>slimmedLowPtElectrons after basic selection (pt > 1. && electronID('ID') > -0.25)</td></tr>
 <th><a href='#MC'>MC</a></th><td style='text-align : left;'>Trigger/flag bit (process: HLT)</td></tr>
 <th><a href='#Muon'>Muon</a></th><td style='text-align : left;'>slimmedMuons after basic selection (pt > 15 || (pt > 3 && (passed('CutBasedIdLoose') || passed('SoftCutBasedId') || passed('SoftMvaId') || passed('CutBasedIdGlobalHighPt') || passed('CutBasedIdTrkHighPt'))))</td></tr>
 <th><a href='#OtherPV'>OtherPV</a></th><td style='text-align : left;'>Z position of other primary vertices, excluding the main PV</td></tr>
 <th><a href='#PFCands'>PFCands</a></th><td style='text-align : left;'>interesting particles from AK4 and AK8 jets</td></tr>
 <th><a href='#PFMET'>PFMET</a></th><td style='text-align : left;'>xx element of met covariance matrix</td></tr>
-<th><a href='#PSWeight'>PSWeight</a></th><td style='text-align : left;'>dummy PS weight (1.0) </td></tr>
+<th><a href='#PSWeight'>PSWeight</a></th><td style='text-align : left;'>PS weights (w_var / w_nominal);   [0] is ISR=2 FSR=1; [1] is ISR=1 FSR=2[2] is ISR=0.5 FSR=1; [3] is ISR=1 FSR=0.5;</td></tr>
 <th><a href='#PV'>PV</a></th><td style='text-align : left;'>total number of reconstructed primary vertices</td></tr>
 <th><a href='#PVBS'>PVBS</a></th><td style='text-align : left;'>main primary vertex with beam-spot</td></tr>
 <th><a href='#Photon'>Photon</a></th><td style='text-align : left;'>slimmedPhotons after basic selection (pt > 5 )</td></tr>
@@ -360,9 +373,6 @@
 <th>FatJet_globalParT2_massRes</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-2 resonance mass correction</td></tr>
 <th>FatJet_globalParT2_massVis</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-2 visible mass correction</td></tr>
 <th>FatJet_globalParT3_QCD</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-3 QCD score.</td></tr>
-<th>FatJet_globalParT3_QCD0HF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-3 QCD 0 HF (b/c) score</td></tr>
-<th>FatJet_globalParT3_QCD1HF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-3 QCD 1 HF (b/c) score</td></tr>
-<th>FatJet_globalParT3_QCD2HF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-3 QCD 2 HF (b/c) score</td></tr>
 <th>FatJet_globalParT3_TopbWev</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-3 Top->bWev score</td></tr>
 <th>FatJet_globalParT3_TopbWmv</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-3 Top->bWmv score</td></tr>
 <th>FatJet_globalParT3_TopbWq</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass-decorrelated GlobalParT-3 Top->bWq score</td></tr>
@@ -2300,6 +2310,57 @@
 <tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
 <th>L1simulation_step</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>Trigger/flag bit (process: HLT)</td></tr>
 </table>
+<h2><a name='LHE' id='LHE'>LHE</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>LHE_AlphaS</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Per-event alphaS</td></tr>
+<th>LHE_HT</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>HT, scalar sum of parton pTs at LHE step</td></tr>
+<th>LHE_HTIncoming</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>HT, scalar sum of parton pTs at LHE step, restricted to partons</td></tr>
+<th>LHE_Nb</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>Number of b partons at LHE step</td></tr>
+<th>LHE_Nc</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>Number of c partons at LHE step</td></tr>
+<th>LHE_Nglu</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>Number of gluon partons at LHE step</td></tr>
+<th>LHE_Njets</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>Number of jets (partons) at LHE step</td></tr>
+<th>LHE_NpLO</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>number of partons at LO</td></tr>
+<th>LHE_NpNLO</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>number of partons at NLO</td></tr>
+<th>LHE_Nuds</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>Number of u,d,s partons at LHE step</td></tr>
+<th>LHE_Vpt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pT of the W or Z boson at LHE step</td></tr>
+</table>
+<h2><a name='LHEPart' id='LHEPart'>LHEPart</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>LHEPart_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Pseodorapidity of LHE particles</td></tr>
+<th>LHEPart_incomingpz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Pz of incoming LHE particles</td></tr>
+<th>LHEPart_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Mass of LHE particles</td></tr>
+<th>LHEPart_pdgId</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>PDG ID of LHE particles</td></tr>
+<th>LHEPart_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Phi of LHE particles</td></tr>
+<th>LHEPart_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Pt of LHE particles</td></tr>
+<th>LHEPart_spin</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Spin of LHE particles</td></tr>
+<th>LHEPart_status</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>LHE particle status; -1:incoming, 1:outgoing</td></tr>
+<th>nLHEPart</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'></td></tr>
+</table>
+<h2><a name='LHEPdfWeight' id='LHEPdfWeight'>LHEPdfWeight</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>LHEPdfWeight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>LHE pdf variation weights (w_var / w_nominal) for LHA IDs 325500 - 325600</td></tr>
+<th>nLHEPdfWeight</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'></td></tr>
+</table>
+<h2><a name='LHEReweightingWeight' id='LHEReweightingWeight'>LHEReweightingWeight</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>LHEReweightingWeight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'></td></tr>
+<th>nLHEReweightingWeight</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'></td></tr>
+</table>
+<h2><a name='LHEScaleWeight' id='LHEScaleWeight'>LHEScaleWeight</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>LHEScaleWeight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>LHE scale variation weights (w_var / w_nominal); [0] is MUF="0.5" MUR="0.5"; [1] is MUF="1.0" MUR="0.5"; [2] is MUF="2.0" MUR="0.5"; [3] is MUF="0.5" MUR="1.0"; [4] is MUF="2.0" MUR="1.0"; [5] is MUF="0.5" MUR="2.0"; [6] is MUF="1.0" MUR="2.0"; [7] is MUF="2.0" MUR="2.0"</td></tr>
+<th>nLHEScaleWeight</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'></td></tr>
+</table>
+<h2><a name='LHEWeight' id='LHEWeight'>LHEWeight</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>LHEWeight_originalXWGTUP</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Nominal event weight in the LHE file</td></tr>
+</table>
 <h2><a name='LowPtElectron' id='LowPtElectron'>LowPtElectron</a> <sup><a href="#top">[back to top]</a></sup></h2>
 <table>
 <tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
@@ -2494,7 +2555,7 @@
 <h2><a name='PSWeight' id='PSWeight'>PSWeight</a> <sup><a href="#top">[back to top]</a></sup></h2>
 <table>
 <tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
-<th>PSWeight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dummy PS weight (1.0) </td></tr>
+<th>PSWeight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PS weights (w_var / w_nominal);   [0] is ISR=2 FSR=1; [1] is ISR=1 FSR=2[2] is ISR=0.5 FSR=1; [3] is ISR=1 FSR=0.5;</td></tr>
 <th>nPSWeight</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'></td></tr>
 </table>
 <h2><a name='PV' id='PV'>PV</a> <sup><a href="#top">[back to top]</a></sup></h2>
