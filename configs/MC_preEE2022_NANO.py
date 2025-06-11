@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: MC_preEE2022 --eventcontent NANOAODSIM --customise DAZSLE/DAZSLE/customize.customize --datatier NANOAODSIM --fileout file:MC_defaultAK4.root --conditions 130X_mcRun3_2022_realistic_v5 --step NANO:@BTV --scenario pp --filein /store/mc/Run3Summer22MiniAODv4/QCD_PT-15to20_MuEnrichedPt5_TuneCP5_13p6TeV_pythia8/MINIAODSIM/130X_mcRun3_2022_realistic_v5-v2/2520000/056b90db-c5cf-4f5f-a4cb-1c69bf4e65b5.root --era Run3 --mc -n 1 --nThreads 1 --customise_commands=process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000 --no_exec
+# with command line options: MC_preEE2022 --fileout file:MC_preEE2022.root --conditions 140X_mcRun3_2022_realistic_v12 --filein /store/mc/Run3Summer22MiniAODv4/QCD_PT-15to20_MuEnrichedPt5_TuneCP5_13p6TeV_pythia8/MINIAODSIM/130X_mcRun3_2022_realistic_v5-v2/2520000/056b90db-c5cf-4f5f-a4cb-1c69bf4e65b5.root --customise DAZSLE/DAZSLE/customize.customize --step NANO:@BTV --scenario pp --customise_commands="process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec -n 1 --nThreads 1 --era Run3 --eventcontent NANOAODSIM --datatier NANOAODSIM --mc
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run3_cff import Run3
@@ -80,7 +80,7 @@ process.NANOAODSIMoutput = cms.OutputModule("NanoAODOutputModule",
         dataTier = cms.untracked.string('NANOAODSIM'),
         filterName = cms.untracked.string('')
     ),
-    fileName = cms.untracked.string('file:MC_defaultAK4.root'),
+    fileName = cms.untracked.string('file:MC_preEE2022.root'),
     outputCommands = process.NANOAODSIMEventContent.outputCommands
 )
 
@@ -88,7 +88,7 @@ process.NANOAODSIMoutput = cms.OutputModule("NanoAODOutputModule",
 
 # Other statements
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '130X_mcRun3_2022_realistic_v5', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '140X_mcRun3_2022_realistic_v12', '')
 
 # Path and EndPath definitions
 process.nanoAOD_step = cms.Path(process.nanoSequenceMC)
@@ -125,7 +125,7 @@ process = nanoAOD_customizeCommon(process)
 
 # Customisation from command line
 
-process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000
+"process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000"
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)

@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: DATA_2022 --customise DAZSLE/DAZSLE/customize.customize --conditions 130X_dataRun3_Prompt_v1 --datatier NANOAOD --era Run3 --eventcontent NANOAOD --filein /store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root --fileout file:data_defaultAK4_2023.root --nThreads 1 --number 1 --scenario pp --step NANO:@BTV --data --customise_commands=process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000 --no_exec
+# with command line options: DATA_2022 --fileout file:DATA_2022.root --conditions 140X_dataRun3_v20 --filein /store/data/Run2022E/BTagMu/MINIAOD/22Sep2023-v1/2530000/004c666b-bfd9-4e91-b15b-8f7bb1587e75.root --customise DAZSLE/DAZSLE/customize.customize --step NANO:@BTV --scenario pp --customise_commands="process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000" --no_exec -n 1 --nThreads 1 --era Run3 --eventcontent NANOAOD --datatier NANOAOD --data
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run3_cff import Run3
@@ -27,7 +27,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('/store/data/Run2023C/BTagMu/MINIAOD/22Sep2023_v2-v1/2540000/0a4d9d3c-566d-48f2-886d-fbd4d5d513cf.root'),
+    fileNames = cms.untracked.vstring('/store/data/Run2022E/BTagMu/MINIAOD/22Sep2023-v1/2530000/004c666b-bfd9-4e91-b15b-8f7bb1587e75.root'),
     secondaryFileNames = cms.untracked.vstring()
 )
 
@@ -79,7 +79,7 @@ process.NANOAODoutput = cms.OutputModule("NanoAODOutputModule",
         dataTier = cms.untracked.string('NANOAOD'),
         filterName = cms.untracked.string('')
     ),
-    fileName = cms.untracked.string('file:data_defaultAK4_2023.root'),
+    fileName = cms.untracked.string('file:DATA_2022.root'),
     outputCommands = process.NANOAODEventContent.outputCommands
 )
 
@@ -87,7 +87,7 @@ process.NANOAODoutput = cms.OutputModule("NanoAODOutputModule",
 
 # Other statements
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '130X_dataRun3_Prompt_v1', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '140X_dataRun3_v20', '')
 
 # Path and EndPath definitions
 process.nanoAOD_step = cms.Path(process.nanoSequence)
@@ -124,7 +124,7 @@ process = nanoAOD_customizeCommon(process)
 
 # Customisation from command line
 
-process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000
+"process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000"
 # Add early deletion of temporary data products to reduce peak memory need
 from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
 process = customiseEarlyDelete(process)
