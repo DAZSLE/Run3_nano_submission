@@ -30,6 +30,7 @@ def get_crab_info(directory):
 
 
 ########The following function is not very nice and can cause user dependent issues: better ideas required########
+
 def modify_das_path(das_path):
     parts = das_path.split("/")
     if len(parts) >= 4:

@@ -9,6 +9,7 @@ Only tested on el9 machines.
 ```bash
 git clone https://github.com/DAZSLE/Run3_nano_submission
 cd Run3_nano_submission
+git checkout NanoAODv14_140X
 ./setup.sh
 ```
 
