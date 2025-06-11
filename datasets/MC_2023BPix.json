@@ -196,5 +196,28 @@
         "WZto4Q-1Jets-4FS_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WZto4Q-1Jets-4FS_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
         "ZZto2L2Q-1Jets_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZZto2L2Q-1Jets_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6_ext1-v2/MINIAODSIM",
         "ZZto4L-1Jets_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZZto4L-1Jets_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6_ext1-v2/MINIAODSIM"
+    },
+    "EWKV": {
+        "VBFZto2Q_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFZto2Q_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6_ext1-v2/MINIAODSIM",
+        "VBFWto2Q_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFWto2Q_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6_ext1-v2/MINIAODSIM",
+        "VBFto2L_MLL-50_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFto2L_MLL-50_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6_ext1-v2/MINIAODSIM",
+        "VBFto2Nu_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFto2Nu_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6_ext1-v2/MINIAODSIM",
+        "VBFtoLNu_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFtoLNu_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6_ext1-v2/MINIAODSIM"
+    },
+    "VGamma": {
+        "WGtoLNuG-1Jets_PTG-400to600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WGtoLNuG-1Jets_PTG-400to600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "WGtoLNuG-1Jets_PTG-600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WGtoLNuG-1Jets_PTG-600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "WGtoLNuG-1Jets_PTG-200to400_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WGtoLNuG-1Jets_PTG-200to400_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "WGtoLNuG-1Jets_PTG-10to100_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WGtoLNuG-1Jets_PTG-10to100_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6-v2/MINIAODSIM",
+        "WGtoLNuG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WGtoLNuG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6-v2/MINIAODSIM",
+        "WGto2QG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WGto2QG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6-v2/MINIAODSIM",
+        "WGto2QG-1Jets_PTG-200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/WGto2QG-1Jets_PTG-200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6-v2/MINIAODSIM",
+        "ZGto2NuG-1Jets_PTG-600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZGto2NuG-1Jets_PTG-600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "ZGto2NuG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZGto2NuG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "ZGto2NuG-1Jets_PTG-400to600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZGto2NuG-1Jets_PTG-400to600_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "ZGto2NuG-1Jets_PTG-200to400_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZGto2NuG-1Jets_PTG-200to400_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "ZGto2NuG-1Jets_PTG-10to100_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZGto2NuG-1Jets_PTG-10to100_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v2-v3/MINIAODSIM",
+        "ZGto2QG-1Jets_PTG-200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZGto2QG-1Jets_PTG-200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6-v2/MINIAODSIM",
+        "ZGto2QG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8": "/ZGto2QG-1Jets_PTG-100to200_TuneCP5_13p6TeV_amcatnloFXFX-pythia8/Run3Summer23BPixMiniAODv4-130X_mcRun3_2023_realistic_postBPix_v6-v2/MINIAODSIM"
     }
 }

@@ -82,5 +82,12 @@
         "WW_TuneCP5_13p6TeV_pythia8": "/WW_TuneCP5_13p6TeV_pythia8/Run3Winter24MiniAOD-133X_mcRun3_2024_realistic_v10-v2/MINIAODSIM",
         "WZ_TuneCP5_13p6TeV_pythia8": "/WZ_TuneCP5_13p6TeV_pythia8/Run3Winter24MiniAOD-133X_mcRun3_2024_realistic_v10-v2/MINIAODSIM",
         "ZZ_TuneCP5_13p6TeV_pythia8": "/ZZ_TuneCP5_13p6TeV_pythia8/Run3Winter24MiniAOD-133X_mcRun3_2024_realistic_v10-v2/MINIAODSIM"
-    }
+    },
+    "EWKV": {
+        "VBFZto2Q_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFZto2Q_TuneCP5_13p6TeV_madgraph-pythia8/RunIII2024Summer24MiniAOD-140X_mcRun3_2024_realistic_v26-v2/MINIAODSIM",
+        "VBFWto2Q_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFWto2Q_TuneCP5_13p6TeV_madgraph-pythia8/RunIII2024Summer24MiniAOD-140X_mcRun3_2024_realistic_v26-v2/MINIAODSIM",
+        "VBFto2Nu_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFto2Nu_TuneCP5_13p6TeV_madgraph-pythia8/RunIII2024Summer24MiniAOD-140X_mcRun3_2024_realistic_v26-v2/MINIAODSIM",
+        "VBFtoLNu_TuneCP5_13p6TeV_madgraph-pythia8": "/VBFtoLNu_TuneCP5_13p6TeV_madgraph-pythia8/RunIII2024Summer24MiniAOD-140X_mcRun3_2024_realistic_v26-v2/MINIAODSIM"
+    },
+    "VGamma": {}
 }
