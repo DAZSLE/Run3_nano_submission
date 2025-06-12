@@ -31,8 +31,8 @@ cmsRun configs/[CONFIG]
 To make documentation pages like [this](https://cms-nanoaod-integration.web.cern.ch/autoDoc/NanoAODv14/2024Prompt/doc_TTtoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8_RunIII2024Summer24NanoAOD-140X_mcRun3_2024_realistic_v26-v2.html) run:
 
 ```bash
-python3 cmssw/CMSSW_14_0_6_patch1/src/PhysicsTools/NanoAOD/test/inspectNanoFile.py MC_postEE2022.root -s MC_size.html -d MC_description.html
-python3 cmssw/CMSSW_14_0_6_patch1/src/PhysicsTools/NanoAOD/test/inspectNanoFile.py DATA_2022.root -s DATA_size.html -d DATA_description.html
+python3 cmssw/CMSSW_14_0_6_patch1/src/PhysicsTools/NanoAOD/test/inspectNanoFile.py MC_postEE2022.root -s docs/MC_size.html -d docs/MC_description.html
+python3 cmssw/CMSSW_14_0_6_patch1/src/PhysicsTools/NanoAOD/test/inspectNanoFile.py DATA_2022.root -s docs/DATA_size.html -d docs/DATA_description.html
 ```
 
 ## Submission
