@@ -10,13 +10,20 @@ Author(s): Raghav Kansal
 from dataclasses import dataclass, field
 import json
 from pprint import pprint
-from dbs.apis.dbsClient import DbsApi
 import argparse
 from pathlib import Path
 
-from utils import print_red, add_bool_arg
+try:
+    from utils import print_red, add_bool_arg
+except ImportError:
+    print("Could not import utils.py! get_mc.py should be run from the `datasets` directory.")
 
-dbs = DbsApi("https://cmsweb.cern.ch/dbs/prod/global/DBSReader")
+try:
+    from dbs.apis.dbsClient import DbsApi
+    dbs = DbsApi("https://cmsweb.cern.ch/dbs/prod/global/DBSReader")
+except ModuleNotFoundError:
+    print("DAS API not found! Please install dbs-client package with `pip3 install dbs3-client`.")
+
 
 YEARS = ["2022", "2022EE", "2023", "2023BPix", "2024"]
 YEARS_2022_23 = ["2022", "2022EE", "2023", "2023BPix"]
