@@ -263,7 +263,7 @@ def main(args):
     defaults = {
         "name": f"{dlabel}_{args.year}_{args.dataset}",
         "crab_template": "template_crab.py",
-        "workArea": f"crab/{dlabel}_{args.year}_{args.dataset}",
+        "workArea": f"crab/{TAG}/{dlabel}_{args.year}_{args.dataset}",
         "storageSite": "T3_US_FNALLPC",
         "outLFNDirBase": f"/store/group/lpcpfnano/PFNano_Run3/{TAG}/{args.user}/{dlabel}_{args.year}",
         "voGroup": None,

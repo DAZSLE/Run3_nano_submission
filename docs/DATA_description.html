@@ -64,8 +64,6 @@
 <th><a href='#HLTriggerFirstPath'>HLTriggerFirstPath</a></th><td style='text-align : left;'>Trigger/flag bit (process: HLT)</td></tr>
 <th><a href='#IsoTrack'>IsoTrack</a></th><td style='text-align : left;'>isolated tracks after basic selection (((pt>5 && (abs(pdgId) == 11 || abs(pdgId) == 13)) || pt > 10) && (abs(pdgId) < 15 || abs(eta) < 2.5) && ((abs(dxy) < 0.2 && abs(dz) < 0.1) || pt>15) && ((pfIsolationDR03().chargedHadronIso < 5 && pt < 25) || pfIsolationDR03().chargedHadronIso/pt < 0.2)) and lepton veto</td></tr>
 <th><a href='#Jet'>Jet</a></th><td style='text-align : left;'>slimmedJetsPuppi, i.e. ak4 PFJets Puppi with JECs applied, after basic selection (pt > 15)</td></tr>
-<th><a href='#JetPFCands'>JetPFCands</a></th><td style='text-align : left;'>Index in the candidate list</td></tr>
-<th><a href='#JetSVs'>JetSVs</a></th><td style='text-align : left;'>Index of the parent jet</td></tr>
 <th><a href='#L1'>L1</a></th><td style='text-align : left;'>Trigger/flag bit (process: NANO)</td></tr>
 <th><a href='#L1Reco'>L1Reco</a></th><td style='text-align : left;'>Trigger/flag bit (process: RECO)</td></tr>
 <th><a href='#LowPtElectron'>LowPtElectron</a></th><td style='text-align : left;'>slimmedLowPtElectrons after basic selection (pt > 1. && electronID('ID') > -0.25)</td></tr>
@@ -1390,189 +1388,21 @@
 <h2><a name='Jet' id='Jet'>Jet</a> <sup><a href="#top">[back to top]</a></sup></h2>
 <table>
 <tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
-<th>Jet_Bprob</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Jet B Probability (Usage:BTV)</td></tr>
-<th>Jet_BprobN</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative-only Jet B Probability (Usage:BTV)</td></tr>
-<th>Jet_DeepCSV_flightDistance2dSig</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>transverse distance significance between primary and secondary vertex</td></tr>
-<th>Jet_DeepCSV_flightDistance2dVal</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>transverse distance between primary and secondary vertex</td></tr>
-<th>Jet_DeepCSV_flightDistance3dSig</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>distance significance between primary and secondary vertex</td></tr>
-<th>Jet_DeepCSV_flightDistance3dVal</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>distance between primary and secondary vertex</td></tr>
-<th>Jet_DeepCSV_jetNSecondaryVertices</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of reconstructed possible secondary vertices in jet</td></tr>
-<th>Jet_DeepCSV_jetNSelectedTracks</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>selected tracks in the jet</td></tr>
-<th>Jet_DeepCSV_jetNTracksEtaRel</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of tracks for which etaRel is computed</td></tr>
-<th>Jet_DeepCSV_trackJetPt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track-based jet transverse momentum</td></tr>
-<th>Jet_DeepCSV_trackSip2dSigAboveCharm</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter significance of first track lifting mass above charm</td></tr>
-<th>Jet_DeepCSV_trackSip2dValAboveCharm</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter of first track lifting mass above charm</td></tr>
-<th>Jet_DeepCSV_trackSip3dSigAboveCharm</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter significance of first track lifting mass above charm</td></tr>
-<th>Jet_DeepCSV_trackSip3dValAboveCharm</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter of first track lifting mass above charm</td></tr>
-<th>Jet_DeepCSV_trackSumJetDeltaR</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between jet axis and track fourvector sum</td></tr>
-<th>Jet_DeepCSV_trackSumJetEtRatio</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ratio of track sum transverse energy over jet energy</td></tr>
-<th>Jet_DeepCSV_vertexCategory</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>category of secondary vertex (Reco, Pseudo, No)</td></tr>
-<th>Jet_DeepCSV_vertexEnergyRatio</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ratio of energy at secondary vertex over total energy</td></tr>
-<th>Jet_DeepCSV_vertexJetDeltaR</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between jet axis and secondary vertex direction</td></tr>
-<th>Jet_DeepCSV_vertexMass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass of track sum at secondary vertex</td></tr>
-<th>Jet_DeepCSV_vertexNTracks</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of tracks at secondary vertex</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackDeltaR_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudoangular distance from the jet axis for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackDeltaR_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudoangular distance from the jet axis for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackDeltaR_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudoangular distance from the jet axis for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackEtaRel_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudorapidity, relative to the jet axis for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackEtaRel_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudorapidity, relative to the jet axis for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackEtaRel_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudorapidity, relative to the jet axis for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackJetDistVal_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>minimum track approach distance to jet axis for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackJetDistVal_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>minimum track approach distance to jet axis for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackJetDistVal_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>minimum track approach distance to jet axis for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPParRatio_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dot product of the jet and track momentum divided by the magnitude of the jet momentum for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPParRatio_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dot product of the jet and track momentum divided by the magnitude of the jet momentum for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPParRatio_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dot product of the jet and track momentum divided by the magnitude of the jet momentum for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPPar_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dot product of the jet and track momentum for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPPar_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dot product of the jet and track momentum for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPPar_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dot product of the jet and track momentum for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPtRel_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track transverse momentum, relative to the jet axis for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPtRel_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track transverse momentum, relative to the jet axis for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackPtRel_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track transverse momentum, relative to the jet axis for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip2dSig_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter significance for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip2dSig_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter significance for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip2dSig_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter significance for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip2dVal_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip2dVal_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip2dVal_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 2D signed impact parameter for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip3dSig_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter significance for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip3dSig_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter significance for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip3dSig_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter significance for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip3dVal_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip3dVal_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_BtagPf_trackSip3dVal_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track 3D signed impact parameter for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_VTX_ass_0</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag that indicates whether the track was used in the primary vertex fit for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_VTX_ass_1</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag that indicates whether the track was used in the primary vertex fit for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_VTX_ass_2</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag that indicates whether the track was used in the primary vertex fit for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_chi2_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2 of the charged track fit for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_chi2_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2 of the charged track fit for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_chi2_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2 of the charged track fit for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_drminsv_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudoangular distance from the closest secondary vertex of the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_drminsv_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudoangular distance from the closest secondary vertex of the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_drminsv_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>track pseudoangular distance from the closest secondary vertex of the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_ptrel_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the jet momentum carried by the track for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_ptrel_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the jet momentum carried by the track for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_ptrel_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the jet momentum carried by the track for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_puppiw_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>charged candidate PUPPI weight of the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_puppiw_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>charged candidate PUPPI weight of the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_puppiw_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>charged candidate PUPPI weight of the 2. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_quality_0</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag which indicates the quality of the fitted track, based on number of detector hits used for the reconstruction as well as the overall chi2 of the charged track fit for the 0. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_quality_1</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag which indicates the quality of the fitted track, based on number of detector hits used for the reconstruction as well as the overall chi2 of the charged track fit for the 1. cpf</td></tr>
-<th>Jet_DeepJet_Cpfcan_quality_2</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag which indicates the quality of the fitted track, based on number of detector hits used for the reconstruction as well as the overall chi2 of the charged track fit for the 2. cpf</td></tr>
-<th>Jet_DeepJet_Npfcan_HadFrac_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the neutral candidate energy deposited in the hadronic calorimeter for the 0. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_HadFrac_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the neutral candidate energy deposited in the hadronic calorimeter for the 1. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_HadFrac_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the neutral candidate energy deposited in the hadronic calorimeter for the 2. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_deltaR_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between the neutral candidate and the jet axis for the 0. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_deltaR_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between the neutral candidate and the jet axis for the 1. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_deltaR_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between the neutral candidate and the jet axis for the 2. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_drminsv_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between the neutral candidate and the closest secondary vertex for the 0. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_drminsv_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between the neutral candidate and the closest secondary vertex for the 1. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_drminsv_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between the neutral candidate and the closest secondary vertex for the 2. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_isGamma_0</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag indicating whether the neutral candidate is a photon for the 0. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_isGamma_1</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag indicating whether the neutral candidate is a photon for the 1. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_isGamma_2</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>integer flag indicating whether the neutral candidate is a photon for the 2. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_ptrel_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the jet momentum carried by the neutral candidate for the 0. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_ptrel_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the jet momentum carried by the neutral candidate for the 1. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_ptrel_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>fraction of the jet momentum carried by the neutral candidate for the 2. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_puppiw_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>neutral candidate PUPPI weight for the 0. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_puppiw_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>neutral candidate PUPPI weight for the 1. npf</td></tr>
-<th>Jet_DeepJet_Npfcan_puppiw_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>neutral candidate PUPPI weight for the 2. npf</td></tr>
-<th>Jet_DeepJet_nCpfcand</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Number of charged PF candidates in the jet</td></tr>
-<th>Jet_DeepJet_nNpfcand</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Number of neutral PF candidates in the jet</td></tr>
-<th>Jet_DeepJet_npv</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Number of primary vertices</td></tr>
-<th>Jet_DeepJet_nsv</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Number of secondary vertices in the jet</td></tr>
-<th>Jet_DeepJet_sv_chi2_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2 of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_chi2_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2 of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_chi2_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2 of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_chi2_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2 of the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_costhetasvpv_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>cosine of the angle between the 0. SV flight direction and the direction of the 0. SV momentum</td></tr>
-<th>Jet_DeepJet_sv_costhetasvpv_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>cosine of the angle between the 1. SV flight direction and the direction of the 1. SV momentum</td></tr>
-<th>Jet_DeepJet_sv_costhetasvpv_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>cosine of the angle between the 2. SV flight direction and the direction of the 2. SV momentum</td></tr>
-<th>Jet_DeepJet_sv_costhetasvpv_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>cosine of the angle between the 3. SV flight direction and the direction of the 3. SV momentum</td></tr>
-<th>Jet_DeepJet_sv_d3d_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) value of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_d3d_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) value of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_d3d_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) value of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_d3d_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) value of the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_d3dsig_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) significance of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_d3dsig_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) significance of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_d3dsig_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) significance of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_d3dsig_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter (flight distance) significance of the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_deltaR_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between jet axis and the 0. SV direction</td></tr>
-<th>Jet_DeepJet_sv_deltaR_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between jet axis and the 1. SV direction</td></tr>
-<th>Jet_DeepJet_sv_deltaR_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between jet axis and the 2. SV direction</td></tr>
-<th>Jet_DeepJet_sv_deltaR_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pseudoangular distance between jet axis and the 3. SV direction</td></tr>
-<th>Jet_DeepJet_sv_dxy_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) value of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_dxy_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) value of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_dxy_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) value of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_dxy_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) value of the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_dxysig_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) significance of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_dxysig_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) significance of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_dxysig_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) significance of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_dxysig_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>2D impact parameter (flight distance) significance of the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_enratio_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ratio of the 0. SV energy ratio to the jet energy</td></tr>
-<th>Jet_DeepJet_sv_enratio_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ratio of the 1. SV energy ratio to the jet energy</td></tr>
-<th>Jet_DeepJet_sv_enratio_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ratio of the 2. SV energy ratio to the jet energy</td></tr>
-<th>Jet_DeepJet_sv_enratio_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ratio of the 3. SV energy ratio to the jet energy</td></tr>
-<th>Jet_DeepJet_sv_mass_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV mass of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_mass_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV mass of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_mass_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV mass of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_mass_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV mass of the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_normchi2_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2/dof of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_normchi2_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2/dof of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_normchi2_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2/dof of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_normchi2_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2/dof of the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_ntracks_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Number of tracks asociated to the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_ntracks_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Number of tracks asociated to the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_ntracks_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Number of tracks asociated to the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_ntracks_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Number of tracks asociated to the 3. SV</td></tr>
-<th>Jet_DeepJet_sv_pt_0</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV pt of the 0. SV</td></tr>
-<th>Jet_DeepJet_sv_pt_1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV pt of the 1. SV</td></tr>
-<th>Jet_DeepJet_sv_pt_2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV pt of the 2. SV</td></tr>
-<th>Jet_DeepJet_sv_pt_3</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV pt of the 3. SV</td></tr>
 <th>Jet_PNetRegPtRawCorr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet universal flavor-aware visible pT regression (no neutrinos), correction relative to raw jet pT</td></tr>
 <th>Jet_PNetRegPtRawCorrNeutrino</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet universal flavor-aware pT regression neutrino correction, relative to visible. To apply full regression, multiply raw jet pT by both PNetRegPtRawCorr and PNetRegPtRawCorrNeutrino.</td></tr>
 <th>Jet_PNetRegPtRawRes</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet universal flavor-aware jet pT resolution estimator, (q84 - q16)/2</td></tr>
-<th>Jet_Proba</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Jet Probability (Usage:BTV)</td></tr>
-<th>Jet_ProbaN</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative-only Jet Probability (Usage:BTV)</td></tr>
 <th>Jet_UParTAK4RegPtRawCorr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>UnifiedParT universal flavor-aware visible pT regression (no neutrinos), correction relative to raw jet pT</td></tr>
 <th>Jet_UParTAK4RegPtRawCorrNeutrino</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>UnifiedParT universal flavor-aware pT regression neutrino correction, relative to visible. To apply full regression, multiply raw jet pT by both UParTAK4RegPtRawCorr and UParTAK4RegPtRawCorrNeutrino.</td></tr>
 <th>Jet_UParTAK4RegPtRawRes</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>UnifiedParT universal flavor-aware jet pT resolution estimator, (q84 - q16)/2</td></tr>
 <th>Jet_area</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>jet catchment area, for JECs</td></tr>
 <th>Jet_btagDeepFlavB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet b+bb+lepb tag discriminator</td></tr>
-<th>Jet_btagDeepFlavB_b</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet b tag probability</td></tr>
-<th>Jet_btagDeepFlavB_bb</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet bb tag probability</td></tr>
-<th>Jet_btagDeepFlavB_lepb</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet lepb tag probability</td></tr>
-<th>Jet_btagDeepFlavC</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet c tag probability</td></tr>
 <th>Jet_btagDeepFlavCvB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet c vs b+bb+lepb discriminator</td></tr>
 <th>Jet_btagDeepFlavCvL</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet c vs uds+g discriminator</td></tr>
-<th>Jet_btagDeepFlavG</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet gluon tag probability</td></tr>
 <th>Jet_btagDeepFlavQG</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet g vs uds discriminator</td></tr>
-<th>Jet_btagDeepFlavUDS</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeepJet uds tag probability</td></tr>
-<th>Jet_btagNegDeepFlavB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet b+bb+lepb tag discriminator</td></tr>
-<th>Jet_btagNegDeepFlavB_b</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet b tag probability</td></tr>
-<th>Jet_btagNegDeepFlavB_bb</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet bb tag probability</td></tr>
-<th>Jet_btagNegDeepFlavB_lepb</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet lepb tag probability</td></tr>
-<th>Jet_btagNegDeepFlavC</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet c tag probability</td></tr>
-<th>Jet_btagNegDeepFlavCvB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet c vs b+bb+lepb discriminator</td></tr>
-<th>Jet_btagNegDeepFlavCvL</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet c vs uds+g discriminator</td></tr>
-<th>Jet_btagNegDeepFlavG</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet gluon tag probability</td></tr>
-<th>Jet_btagNegDeepFlavQG</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet g vs uds discriminator</td></tr>
-<th>Jet_btagNegDeepFlavUDS</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative DeepJet uds tag probability</td></tr>
-<th>Jet_btagNegPNetB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative ParticleNet b vs. udscg</td></tr>
-<th>Jet_btagNegPNetCvB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative ParticleNet c vs. b</td></tr>
-<th>Jet_btagNegPNetCvL</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative ParticleNet c vs. udsg</td></tr>
-<th>Jet_btagNegPNetProbB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative ParticleNet b tag probability</td></tr>
-<th>Jet_btagNegPNetProbC</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative ParticleNet c tag probability</td></tr>
-<th>Jet_btagNegPNetProbG</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative ParticleNet gluon tag probability</td></tr>
-<th>Jet_btagNegPNetProbUDS</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Negative ParticleNet uds tag probability</td></tr>
 <th>Jet_btagPNetB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet b vs. udscg</td></tr>
 <th>Jet_btagPNetCvB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet c vs. b</td></tr>
 <th>Jet_btagPNetCvL</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet c vs. udsg</td></tr>
 <th>Jet_btagPNetCvNotB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet C vs notB</td></tr>
-<th>Jet_btagPNetProbB</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet b tag probability</td></tr>
-<th>Jet_btagPNetProbC</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet c tag probability</td></tr>
-<th>Jet_btagPNetProbG</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet gluon tag probability</td></tr>
-<th>Jet_btagPNetProbUDS</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet uds tag probability</td></tr>
 <th>Jet_btagPNetQvG</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet q (udsbc) vs. g</td></tr>
 <th>Jet_btagPNetTauVJet</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ParticleNet tau vs. jet</td></tr>
 <th>Jet_btagUParTAK4B</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>UnifiedParT b vs. udscg</td></tr>
@@ -1612,46 +1442,6 @@
 <th>Jet_svIdx1</th><td style='text-align : left;'>Short_t(index to Sv)</td><td style='text-align : left;'>index of first matching secondary vertex</td></tr>
 <th>Jet_svIdx2</th><td style='text-align : left;'>Short_t(index to Sv)</td><td style='text-align : left;'>index of second matching secondary vertex</td></tr>
 <th>nJet</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>slimmedJetsPuppi, i.e. ak4 PFJets Puppi with JECs applied, after basic selection (pt > 15)</td></tr>
-</table>
-<h2><a name='JetPFCands' id='JetPFCands'>JetPFCands</a> <sup><a href="#top">[back to top]</a></sup></h2>
-<table>
-<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
-<th>JetPFCands_btagDecayLenVal</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>btagDecayLenVal</td></tr>
-<th>JetPFCands_btagEtaRel</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>btagEtaRel</td></tr>
-<th>JetPFCands_btagJetDistVal</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>btagJetDistVal</td></tr>
-<th>JetPFCands_btagPParRatio</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>btagPParRatio</td></tr>
-<th>JetPFCands_btagPtRatio</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>btagPtRatio</td></tr>
-<th>JetPFCands_btagSip3dSig</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>btagSip3dSig</td></tr>
-<th>JetPFCands_btagSip3dVal</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>btagSip3dVal</td></tr>
-<th>JetPFCands_dxyErrFromPV</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxyErrFromPV</td></tr>
-<th>JetPFCands_dxyFromPV</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxyFromPV</td></tr>
-<th>JetPFCands_dzErrFromPV</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dzErrFromPV</td></tr>
-<th>JetPFCands_dzFromPV</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dzFromPV</td></tr>
-<th>JetPFCands_jetIdx</th><td style='text-align : left;'>Int_t(index to Jet)</td><td style='text-align : left;'>Index of the parent jet</td></tr>
-<th>JetPFCands_pFCandsIdx</th><td style='text-align : left;'>Int_t(index to Pfcands)</td><td style='text-align : left;'>Index in the candidate list</td></tr>
-<th>JetPFCands_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
-<th>nJetPFCands</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'></td></tr>
-</table>
-<h2><a name='JetSVs' id='JetSVs'>JetSVs</a> <sup><a href="#top">[back to top]</a></sup></h2>
-<table>
-<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
-<th>JetSVs_chi2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2</td></tr>
-<th>JetSVs_costhetasvpv</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'></td></tr>
-<th>JetSVs_d3d</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'></td></tr>
-<th>JetSVs_d3dsig</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'></td></tr>
-<th>JetSVs_deltaR</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dR from parent jet</td></tr>
-<th>JetSVs_dxy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'></td></tr>
-<th>JetSVs_dxysig</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'></td></tr>
-<th>JetSVs_enration</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>energy relative to parent jet</td></tr>
-<th>JetSVs_jetIdx</th><td style='text-align : left;'>Int_t(index to Jet)</td><td style='text-align : left;'>Index of the parent jet</td></tr>
-<th>JetSVs_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV mass</td></tr>
-<th>JetSVs_normchi2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>chi2/ndof</td></tr>
-<th>JetSVs_ntracks</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Number of tracks associated to SV</td></tr>
-<th>JetSVs_phirel</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>DeltaPhi(sv, jet)</td></tr>
-<th>JetSVs_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>SV pt</td></tr>
-<th>JetSVs_ptrel</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pT relative to parent jet</td></tr>
-<th>JetSVs_sVIdx</th><td style='text-align : left;'>Int_t(index to Sv)</td><td style='text-align : left;'>Index in the SV list</td></tr>
-<th>nJetSVs</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'></td></tr>
 </table>
 <h2><a name='L1' id='L1'>L1</a> <sup><a href="#top">[back to top]</a></sup></h2>
 <table>
