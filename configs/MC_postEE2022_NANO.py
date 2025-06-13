@@ -113,10 +113,10 @@ from DAZSLE.DAZSLE.customize import customize
 process = customize(process)
 
 # Automatic addition of the customisation function from PhysicsTools.NanoAOD.custom_btv_cff
-from PhysicsTools.NanoAOD.custom_btv_cff import BTVCustomNanoAOD_allPF 
+from PhysicsTools.NanoAOD.custom_btv_cff import BTVCustomNanoAOD_AK8 
 
-#call to customisation function BTVCustomNanoAOD_allPF imported from PhysicsTools.NanoAOD.custom_btv_cff
-process = BTVCustomNanoAOD_allPF(process)
+#call to customisation function BTVCustomNanoAOD_AK8 imported from PhysicsTools.NanoAOD.custom_btv_cff
+process = BTVCustomNanoAOD_AK8(process)
 
 # Automatic addition of the customisation function from PhysicsTools.NanoAOD.nano_cff
 from PhysicsTools.NanoAOD.nano_cff import nanoAOD_customizeCommon 

@@ -71,7 +71,7 @@ cmsDriver.py $name --fileout file:$name.root --conditions $gt --filein $filein $
 
 ############# Customization #############
 
-# Replace BTVCustomNanoAOD with BTVCustomNanoAOD_allPF in all generated files
+# Replace BTVCustomNanoAOD with BTVCustomNanoAOD_AK8 in all generated files for saving AK8 jet pf candidates
 for file in *.py; do
-    sed -i 's/BTVCustomNanoAOD/BTVCustomNanoAOD_allPF/g' "$file"
+    sed -i 's/BTVCustomNanoAOD/BTVCustomNanoAOD_AK8/g' "$file"
 done
