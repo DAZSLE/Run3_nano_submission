@@ -23,6 +23,8 @@ import random
 import hashlib
 
 
+TAG = "25v2"
+
 DATASETS = ["JetMET", "EGamma", "Muon", "MuonEG", "BTagMu", "Tau"]
 
 CONFIGS = {
@@ -261,9 +263,9 @@ def main(args):
     defaults = {
         "name": f"{dlabel}_{args.year}_{args.dataset}",
         "crab_template": "template_crab.py",
-        "workArea": f"crab/{dlabel}_{args.year}_{args.dataset}",
+        "workArea": f"crab/{TAG}/{dlabel}_{args.year}_{args.dataset}",
         "storageSite": "T3_US_FNALLPC",
-        "outLFNDirBase": f"/store/group/lpcpfnano/PFNano_Run3/25v1/{args.user}/{dlabel}_{args.year}",
+        "outLFNDirBase": f"/store/group/lpcpfnano/PFNano_Run3/{TAG}/{args.user}/{dlabel}_{args.year}",
         "voGroup": None,
         "publication": True,
         "config": f"configs/{CONFIGS[dlabel][args.year]}",
