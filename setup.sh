@@ -33,6 +33,7 @@ while true; do
     shift
 done
 
+echo "Running withEDITABLE: $EDITABLE"
 
 CMSSW_VER=CMSSW_14_0_6_patch1
 this_file="$( [ ! -z "$ZSH_VERSION" ] && echo "${(%):-%x}" || echo "${BASH_SOURCE[0]}" )"
