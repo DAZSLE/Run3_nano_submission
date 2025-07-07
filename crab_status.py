@@ -60,7 +60,7 @@ def main(args):
             isData = sample in DATASETS
             datamc_label = "data" if isData else "mc"
             dir_name = f"{datamc_label}_{year}_{sample}"
-            dir_path = Path("crab") / dir_name
+            dir_path = Path("crab/25v2") / dir_name
 
             print("Checking", dir_name)
             if not dir_path.exists():
